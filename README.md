@@ -1,7 +1,7 @@
 
 # Trivia Ninja Q&A Collection Platform, TNQACP. 
 
-The Complement for the **Trivia Ninja** app by **Touko Banix**.  
+The Complement for the **Trivia Ninja** app by [**Touko Banix**](https://toukobanix.com) 
 The TNQACP let content creators set questions for **Trivia Ninja**
 
 [**Download Trivia Ninja For Android**](https://play.google.com/store/apps/details?id=com.trivia.ninja)  <br>
