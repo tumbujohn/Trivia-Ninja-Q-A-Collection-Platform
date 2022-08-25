@@ -13,25 +13,24 @@
             <section id="sect">
                 <div id="signin">
                     <h1 id="log">LOGIN</h1>
-                    <form action="submit" method="post">
+                    <form action="val_Login.php" method="post">
                         <div>
-                            <label for="">username</label>
+                            <label for="username">username</label>
                         </div>
                         <div>
-                            <input type="text">
+                            <input type="text" id="username" name="username">
                         </div>
                         <div>
-                            <label for="">password</label>
+                            <label for="password">password</label>
                         </div>
                         <div>
-                            <input type="password">
+                            <input type="password" id="password" name="password">
                         </div>
                         <div>
-                           <input type="submit" value="Login">
+                           <input type="submit" value="Login" class="pointer" id="color">
                         </div>
                         <div id="don">
-                            <input type="checkbox">
-                            <label for="">remember me</label>
+                            <label for="remember"><input type="checkbox" id="remember" name="remember">remember me</label>
                             <input type="submit" value="forgot password">
                         </div>
                     </form>
@@ -39,7 +38,7 @@
                 <div id="signup">
                     <h1>welcome to login</h1>
                     <h4>Don't have an account?</h4>
-                    <input type="submit" value="sign up">
+                    <input type="submit" value="Sign Up" class="pointer">
                 </div>
             </section>
         </div>
