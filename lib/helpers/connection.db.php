@@ -1,13 +1,13 @@
 <?php
 //MySQL Class Parameters | Variables should be conventionally defined in ./strings.php so it can be conveniently used through out the web app and not only including it in this file.
 $servername = "localhost"; //Development Server
-$username = "username";
-$password = "password";
-$dbname = "Trivia_Ninja_Q_A_Db";
-$port = 3306; //default MySQL Port
+$username = "root";
+$password = "";
+$dbname = "trivia_ninja_q_a_db";
+// $port = 3306; //default MySQL Port
 
 // Create database connection --> dbc or just db
-$db = new mysqli($servername, $username, $password, $dbname, $port);
+$db = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($db->connect_error) {
