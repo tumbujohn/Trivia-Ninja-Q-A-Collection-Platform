@@ -1,3 +1,9 @@
+<?php 
+include 'val_login.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +19,7 @@
             <section id="sect">
                 <div id="signin">
                     <h1 id="log">LOGIN</h1>
-                    <form action="val_Login.php" method="post">
+                    <form  method="post">
                         <div>
                             <label for="username">username</label>
                         </div>
@@ -24,10 +30,10 @@
                             <label for="password">password</label>
                         </div>
                         <div>
-                            <input type="password" id="password" name="password" minlength="8" maxlength="8" required>
+                            <input type="password" id="password" name="password" minlength="8" maxlength="14" required>
                         </div>
                         <div>
-                           <input type="submit" value="LOGIN" class="pointer" id="color">
+                           <input type="submit" value="LOGIN" class="pointer" name="login" id="color">
                         </div>
                         <div id="don">
                             <label for="remember"><input type="checkbox" id="remember" name="remember">remember me</label>
