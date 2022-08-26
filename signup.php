@@ -1,4 +1,6 @@
-
+<?php
+include 'Register.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +8,7 @@
         <link rel="stylesheet" href="asset/css/signup.css">
     </head>
     <body>
-        <form action="val-login.php" method="post" class="signup-form">
+        <form  method="post" class="signup-form">
             <div id="signup">
                 <div>
                 <img src="asset/images/sign.png" alt="trivia-ninja-logo">
