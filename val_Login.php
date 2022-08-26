@@ -9,37 +9,37 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == TRUE) {
 }
 
 # Include connection
-require_once ".lib/helpers/connection.db.php";
+require_once "./lib/helpers/connection.db.php";
 
 # Define variables and initialize with empty values
-$user_login_err = $user_password_err = $login_err = "";
-$user_login = $user_password = "";
+$username_err = $password_err = $login_err = "";
+$username = $password = "";
 
 # Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty(trim($_POST["user_login"]))) {
-    $user_login_err = "Please enter your username or an email id.";
+  if (empty(trim($_POST["username"]))) {
+    $username_err = "Please enter your username or an email id.";
   } else {
-    $user_login = trim($_POST["user_login"]);
+    $username = trim($_POST["username"]);
   }
 
-  if (empty(trim($_POST["user_password"]))) {
-    $user_password_err = "Please enter your password.";
+  if (empty(trim($_POST["password"]))) {
+    $password_err = "Please enter your password.";
   } else {
-    $user_password = trim($_POST["user_password"]);
+    $password = trim($_POST["password"]);
   }
 
   # Validate credentials 
-  if (empty($user_login_err) && empty($user_password_err)) {
+  if (empty($username_err) && empty($password_err)) {
     # Prepare a select statement
     $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
       # Bind variables to the statement as parameters
-      mysqli_stmt_bind_param($stmt, "ss", $param_user_login, $param_user_login);
+      mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_username);
 
       # Set parameters
-      $param_user_login = $user_login;
+      $param_username = $username;
 
       # Execute the statement
       if (mysqli_stmt_execute($stmt)) {
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           if (mysqli_stmt_fetch($stmt)) {
             # Check if password is correct
-            if (password_verify($user_password, $hashed_password)) {
+            if (password_verify($password, $hashed_password)) {
 
               # Store data in session variables
               $_SESSION["id"] = $id;
