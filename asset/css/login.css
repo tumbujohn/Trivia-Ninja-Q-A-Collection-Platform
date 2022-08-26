@@ -63,9 +63,16 @@ body{
     border-radius: 15px;
 }
 #color{
+    margin-top: 25px;
     background-color: rgb(12, 12, 49);
+    font-size: 2em;
+    padding: 5px 30px;
     color: white;
     letter-spacing: 0.1em;
+}
+#color:hover{
+    color:rgb(12, 12, 49);
+    background-color:white ;
 }
 
 #don{
@@ -89,16 +96,33 @@ body{
 #signup h1{
     text-align: center;
     text-transform: uppercase;
-    color:#41a2c8;
-    font-size: 2.5em;
-    margin-top: 120px;
+    color:#1da6dc;
+    font-size: 3.5em;
+    word-spacing: 0.7em;
+    margin-top: 80px;
 }
 #signup h4{
     color: white;
+    font-size: 1.5em;
     word-spacing:0.7em ;
     letter-spacing:0.2em ;
-    margin: 20px 0 130px 0;
+    margin: 110px 0 50px 0;
 
+}
+#signup a{
+    text-decoration: none;
+    font-size: 2.5em;
+    padding: 5px 20px;
+    font-weight: 700;
+    border: 2px solid white ;
+    background-color: white;
+    border-radius: 20px;
+    color:rgb(9, 9, 59);;
+}
+#signup a:hover{
+    color:white;
+    font-weight: 700;
+    background-color: rgb(9, 9, 59);;
 }
 @media(min-width:992px){
     
