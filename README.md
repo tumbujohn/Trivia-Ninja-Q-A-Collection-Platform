@@ -17,7 +17,7 @@ The TNQACP let's content creators set questions for **Trivia Ninja**
 > Mr Ntomnwi Joshua
 >
 > ### Back-End Developers:
-> Miss Therese Marie  
+> Miss Therese-Claire  
 > Mr Ndi Nlomo Raoul  
 
 
