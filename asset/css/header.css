@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(2, 2, 68);
+    color:white;
+    font-size: 2em;
+    padding: 5px 10px;
+}
+.head{
+    cursor: pointer;
+}
+#header i{
+    margin: 0 5px;
+}
+#user{
+    flex:3;
+    text-align: end;
+    padding-right: 40px;
+}
+
+
