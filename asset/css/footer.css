@@ -63,7 +63,6 @@ footer{
     transform: scale(1.09);
     transition: 0.8s all ease;
     width: fit-content;
-    butt
 }
 
 .email-id:hover{
@@ -124,4 +123,16 @@ form button{
     outline: none;
     cursor: pointer;
     color: #ccc;
+}
+
+.social-icon i .fa-brands{
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 4-px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
 }
