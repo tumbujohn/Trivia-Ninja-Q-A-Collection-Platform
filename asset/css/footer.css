@@ -1,0 +1,127 @@
+body{
+    background: #eef8ff;
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, #00093c,#2d0b00);
+    color: #fff;
+    padding: 100px 0 30px; 
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+#text{
+    text-align: justify;
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between ;
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+
+}
+
+.logo{
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email-id{
+    width: fit-content;
+    border-bottom:  1px solid #ccc;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: 0.8s all ease;
+}
+
+.number{
+    border-bottom: 1px solid#ccc;
+    width: fit-content;
+}
+
+.number:hover{
+    color: turquoise;
+    cursor: pointer;
+    transform: scale(1.09);
+    transition: 0.8s all ease;
+    width: fit-content;
+    butt
+}
+
+.email-id:hover{
+    color: turquoise;
+    border-bottom: none;
+    transform: scale(1.09);
+}
+
+ul{
+    padding-left: 0px;
+}
+
+ul li{
+    list-style: none;
+    margin-bottom: 12px;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s all ease;
+}
+
+ul li a:hover{
+    color: turquoise;
+    transform: scale(1.25);
+    cursor: pointer;
+
+}
+
+form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid#ccc;
+    margin-bottom: 50px;
+}
+
+form .fa-solid{
+    font-size: 18px;
+    margin-right: 10px;
+    color: white;
+}
+
+form input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    color: #ccc;
+    outline: none;
+}
+
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: #ccc;
+}
