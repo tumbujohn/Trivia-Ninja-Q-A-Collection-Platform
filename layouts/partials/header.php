@@ -1,11 +1,14 @@
+<?php 
+    require_once "../lib/helpers/connection.db.php";
+?> 
 <!DOCTYPE html>
 <html>
     <head>
         <title>
 
         </title>
-        <link rel="stylesheet" href="../../asset/css/header.css">
-        <link rel="stylesheet" href="../../asset/css/nav.css">
+        <link rel="stylesheet" href="../asset/css/header.css">
+        <link rel="stylesheet" href="../asset/css/nav.css">
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
     <body>
@@ -15,7 +18,24 @@
     <span>Trivia Ninja</span>
             </div>
             <div id="user" class="head">
-    <i class="fa fa-user"></i>Username
+    <i class="fa fa-user"></i>
+    <?php 
+          
+          echo $_SESSION['user_id'];
+           
+    ?>       
             </div>
         </header>
    
+
+
+
+
+
+
+
+
+
+
+
+        

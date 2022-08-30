@@ -16,7 +16,9 @@ $result = $db->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
- echo "<script>alert('login works');</script>";
+  $_SESSION['user_id'] = $username;
+        header('location:layouts/dashboard.php'); 
+  
 } else {
   echo "<script>alert('error wrong password');</script>";
 }

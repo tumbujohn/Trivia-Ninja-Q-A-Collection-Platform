@@ -25,7 +25,7 @@ include 'Register.php';
                     <button type="submit" id="signup-btn" name="submit">Create account</button>
                     <div id="login">
                         <span class="login">already have an account?</span>
-                        <a href="login.html" class="login">sign in </a>
+                        <a href="login.php" class="login">sign in </a>
                     </div>
                 </div>
             </div>
