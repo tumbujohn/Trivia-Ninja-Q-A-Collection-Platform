@@ -28,7 +28,7 @@ img{
     height: 702px;
 }
 #input-group{
-    margin-left: -200px;
+    margin-left: -90px;
 }
 #input-group input{
     display: block;
@@ -52,11 +52,11 @@ img{
     font-size: 4em;
 }
 #signup-btn{
-   margin:25px 0 5px 35px;
-   padding: 15px;
+   margin:10px 0 35px 30px;
+   padding: 10px;
    color: rgb(9, 9, 59);
    border-style: none;
-   border-radius: 15px;
+   border-radius: 8px;
    font-size: 1.5em;
    font-weight: 700;
    text-transform: capitalize;
@@ -68,11 +68,11 @@ img{
     color: white;
 }
 #login{
-    margin-left: -140px;
-    padding: 40px 0 5px 0;
+    margin-left: -120px;
+    padding: 0;
 }
 .login{
-    font-size: 1.8em;
+    font-size: 1.4em;
     color: white;
     text-transform: capitalize;
 }
@@ -80,13 +80,41 @@ img{
     text-decoration: none;
     border: 2px solid rgb(9, 9, 59) ;
     background-color: rgb(9, 9, 59);
-    padding:5px 5px 0 5px;
+    padding:5px 5px 5px 5px;
     border-radius: 8px;
-    margin-left: 70px;
+    margin-left:30px ;
     color:white;
 }
 #login a:hover{
     color:rgb(9, 9, 59);
     font-weight: 700;
     background-color: white;
+}
+@media(min-width:992px){
+
+    #signup-btn{
+        margin:15px 0 20px 35px;
+        padding: 15px;
+        
+     
+     }
+     .login{
+        font-size: 1.5em;
+    }
+    #login{
+        margin-left: -140px;
+        padding: 10px 0 5px 0;
+    }
+    #login a{
+        padding:5px 5px 0 5px;
+        border-radius: 8px;
+        margin-left: 70px;
+    }
+    #input-group{
+        margin-left: -200px;
+    }
+    #login a{
+        padding:5px 5px 0 5px;
+        margin-left: 120px;
+    }
 }
