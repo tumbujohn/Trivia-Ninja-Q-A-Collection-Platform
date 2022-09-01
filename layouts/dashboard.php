@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-    if(!ISSET($_SESSION['user_id'])){
+    if(!ISSET($_SESSION['username'])){
         header('location:../login.php');
     }
     

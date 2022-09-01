@@ -20,7 +20,7 @@
             </div>
             <div id="user" class="head">
 
-    <a href="../layouts/partials/userprofile.php"><i class="fa fa-user"></i></a>
+    <a href="../layouts/userprofile.php"><i class="fa fa-user"></i></a>
   
     <?php 
           
