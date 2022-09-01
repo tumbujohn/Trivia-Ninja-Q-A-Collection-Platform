@@ -19,12 +19,17 @@
     <span>Trivia Ninja</span>
             </div>
             <div id="user" class="head">
-    <i class="fa fa-user"></i>
+
+    <a href="../layouts/partials/userprofile.php"><i class="fa fa-user"></i></a>
+  
     <?php 
           
-          echo $_SESSION['user_id'];
+          echo $_SESSION['username'];
            
-    ?>       
+    ?> 
+     <br>
+   
+    <h6><a id="log" href="../logout.php">Log out</a> </h6>  
             </div>
         </header>
    

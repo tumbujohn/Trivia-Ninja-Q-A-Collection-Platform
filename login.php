@@ -44,7 +44,7 @@ include 'val_Login.php';
                 <div id="signup">
                     <h1>welcome to login</h1>
                     <h4>Don't have an account?</h4>
-                    <a href="signup.html" class="pointer"> Sign Up</a>
+                    <a href="signup.php" class="pointer"> Sign Up</a>
                 </div>
             </section>
         </div>

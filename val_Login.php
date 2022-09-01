@@ -16,7 +16,7 @@ $result = $db->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
-  $_SESSION['user_id'] = $username;
+  $_SESSION['username'] = $username;
         header('location:layouts/dashboard.php'); 
   
 } else {

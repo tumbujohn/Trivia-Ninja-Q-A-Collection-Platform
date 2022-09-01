@@ -5,11 +5,11 @@
     
  if(isset($_POST['Update']))
  {
-    $id=$_SESSION['user_id'];
+    $username=$_SESSION['username'];
     $username=$_POST['username'];
     $password=$_POST['password'];
     $email=$_POST['email'];
-    $select= "SELECT * FROM users WHERE user_id='$id'";
+    $select= "SELECT * FROM users WHERE username='$username'";
     $sql = mysqli_query($db,$select);
     $row = mysqli_fetch_assoc($sql);
     $res= $row['user_id'];
