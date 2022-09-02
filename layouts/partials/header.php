@@ -1,5 +1,5 @@
 <?php 
-    require_once "../lib/helpers/connection.db.php";
+    require "../lib/helpers/connection.db.php";
 ?> 
 <!DOCTYPE html>
 <html>
