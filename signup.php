@@ -17,6 +17,7 @@
                     <input type="text" placeholder="enter last name:" name="lname" id="lname">
                     <input type="text" placeholder="enter your username:" name="username" id="username">
                     <input type="email" placeholder="enter email adress:" name="email" id="email" required>
+                    <input type="tel" placeholder="enter Phone:" name="tel" id="email" required>
                     <input type="password" placeholder="enter password:" name="password" id="password" minlength="8" maxlength="14" required>
                     <input type="password" placeholder="confirm password:" name="cpassword" id="password" minlength="8" maxlength="14" required>
                     <button type="submit" id="signup-btn" name="signup">Create account</button>

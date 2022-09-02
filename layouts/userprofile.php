@@ -31,7 +31,7 @@ include ("partials/sidenav.php");
             
             <input type="text" name="username" id="username" value="<?php echo $fetch['username'] ?>">
             <input type="email" name="email" id="email" value="<?php echo $fetch['email'] ?>">
-            <input type="password" name="password" id="pass" value="<?php echo $fetch['password'] ?>">
+            <input type="password" name="password" id="pass"  required>
 
             <div class="btns">
                 <button type="submit" name="update">Update</button>
