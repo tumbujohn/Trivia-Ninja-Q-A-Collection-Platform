@@ -1,20 +1,31 @@
-#nav-bar{
+.na{
+    /* display: none; */
+    width:0%;
+    overflow: hidden;
     background: linear-gradient(#2d0b00, #00093c);
+}
+#nav-bar{
     height:100vh;
-    width:20%;
+    width:100%;
     display: flex;
     align-items: left;
     flex-direction: column;
     padding: 20px;
-    font-size: 2em;
+    font-size: 1.2rem;
 }
 #nav-bar i{
     margin:10px 0 ;
     color:white;
-    font-weight: bold;
 }
 #nav-bar a{
     text-decoration: none;
     color: white;
     padding-left: 10px;
+}
+
+/* media query */
+@media(min-width:992px){
+    .na{
+        width:20%;
+    }
 }

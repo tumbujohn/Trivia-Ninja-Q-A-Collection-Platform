@@ -14,25 +14,38 @@ body{
     align-items: center;
     background: linear-gradient(to left, #00093c,#2d0b00);
     color:white;
-    font-size: 2em;
     padding: 5px 10px;
 }
 .head{
     cursor: pointer;
+    font-size: 2rem;
+    color: white;
 }
 .head a{
     color: white;
+    text-decoration: none;
+}
+.head p{
+    border: 3px solid red;
 }
 #header i{
     margin: 0 5px;
+    font-size: 2rem;
 }
 #user{
     flex:3;
     text-align: end;
     padding-right: 40px;
+    text-transform: capitalize;
 }
 #log{
     text-decoration: none;
+    background: red;
+    border-radius: 10px;
+    padding: 3px;
+}
+#user h6{
+    margin-top: 10px;
 }
 
 

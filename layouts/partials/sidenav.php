@@ -1,6 +1,6 @@
 
+<div class="na" id="sidenav">
         <div id="nav-bar">
-
      <i class="fa fa-home" ><a href="dashboard.php">Home</a></i>
 
             <i class="fa fa-bell"><a href="notification.php">Notification</a></i>
@@ -12,4 +12,4 @@
             <i class="fa fa-cog" aria-hidden="true"><a href="userprofile.php">Settings</a></i>
 
         </div> 
-   
+        </div>

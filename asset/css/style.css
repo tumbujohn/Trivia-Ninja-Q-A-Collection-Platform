@@ -1,18 +1,137 @@
 
 .Dashboard-container{
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* styling for table of questions */
 .table-wrapper{
     width: 100%;
-    border: 5px solid red;
 }
 
 .text-AQ{
-    font-size: medium;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: blue;
-    border-radius: 2%;
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
 }
+
+
+.text-AQ a{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(24, 24, 54);
+    border-radius: 10%;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.table-wrapper table{
+    width: 100%;
+    white-space: nowrap;
+}
+.table-wrapper table tr{
+    text-align: center;
+}
+
+#txt{
+    font-size: 25px;
+    color: white;
+}
+
+.table-wrapper table th{
+   padding: 5px;
+    background-color: rgb(15, 15, 66);
+}
+
+.table-wrapper table td{
+    border: 2px solid rgb(35, 35, 187);
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.table-wrapper table td a{
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.table-wrapper table td .edit, .table-wrapper table td .delete{
+    background: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.table-wrapper table td .delete{
+    background: red;
+}
+
+.table-wrapper table td .disable{
+    background: silver;
+    color: gray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.edit-wrapper{
+    border: 2px solid rgb(19, 19, 59);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.edit-wrapper label{
+    font-size: 1.4rem;
+    margin-bottom: 1px;
+}
+
+.edit-wrapper form{
+    width: 100%;
+    max-width: 700px;
+   
+}
+
+.edit-grp{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 25px;
+    width: 100%;
+   
+}
+.edit-grp .op{
+    width: 15%;
+}
+.edit-grp input{
+    background:  rgb(19, 19, 59);
+    width: 100%;
+}
+  
+.edit-grp select{
+border: 2px solid rgb(19, 19, 59);
+padding: 5px 10px;
+margin: 0 10px;
+font-size: 1.2rem;
+background: rgb(19, 19, 59) ;
+color: white;
+}
+
+.edit-grp textarea{
+    margin: 0 10px;
+    width: 100%;
+}
+
+.sub{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub input{
+    padding: 5px 10px;
+    width: 50%;
+    background: green;
+}
+
