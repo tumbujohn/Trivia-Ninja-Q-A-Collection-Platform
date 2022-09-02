@@ -17,6 +17,7 @@ require_once "./lib/helpers/connection.db.php";
 
   if($row > 0){
     $_SESSION['username']=$fetch['username'];
+    $_SESSION['user_id']=$fetch['user_id'];
   // output data of each row
         header('location:layouts/dashboard.php'); 
   
