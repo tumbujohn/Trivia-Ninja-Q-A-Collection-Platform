@@ -5,7 +5,7 @@ session_start();
         header('location:../login.php');
     }
     
-include ("profile.php");    
+// include ("profile.php");    
 
 
 include ("partials/header.php");
@@ -28,10 +28,10 @@ if($del_question){
 
 }
 
-
 ?>
  
- <a href="add-question.php">Add question</a>
+ <div class="table-wrapper">
+ <a href="add-question.php" class = text-AQ>Add question</a>
 
 <table>
     <thead>
@@ -68,3 +68,6 @@ if($row>0){
 
     </tbody>
 </table>
+</div>
+
+<?php include ("./partials/footer.php"); ?>

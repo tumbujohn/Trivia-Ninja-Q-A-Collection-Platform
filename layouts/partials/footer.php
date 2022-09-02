@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/3c3539d3c1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../asset/css/footer.css">
-    <title>footer</title>
-</head>
-<body>
+
+    
+</div>
+<!-- end of dasboard container -->
+
     <footer>
         <div class="row">
             <div class="col">
-                <img src="../../asset/images/trivia.png" alt="logo" class="logo">
+                <img src="../asset/images/trivia.png" alt="logo" class="logo">
                 <p id="text"> subscribe to get latest updates on trivia ninja day to day update on their latesr release
                     about their app so you won't miss out or be left behind by what this amazing app has to offer to you
                 </p>
@@ -36,7 +30,7 @@
             </div>
             <div class="col">
                 <h3>Newsletter</h3>
-                <form>
+                <form class="footer_form">
                     <i class="fa-solid fa-envelope"></i>
                     <input type="email" placeholder="Enter your email id"required>
                     <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>

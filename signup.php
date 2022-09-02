@@ -1,6 +1,4 @@
-<?php
-include 'Register.php';
-?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +19,7 @@ include 'Register.php';
                     <input type="email" placeholder="enter email adress:" name="email" id="email" required>
                     <input type="password" placeholder="enter password:" name="password" id="password" minlength="8" maxlength="14" required>
                     <input type="password" placeholder="confirm password:" name="cpassword" id="password" minlength="8" maxlength="14" required>
-                    <button type="submit" id="signup-btn" name="submit">Create account</button>
+                    <button type="submit" id="signup-btn" name="signup">Create account</button>
                     <div id="login">
                         <span class="login">already have an account?</span>
                         <a href="login.php" class="login">sign in </a>

@@ -1,21 +1,19 @@
-body{
-    background: #eef8ff;
-}
+
 
 footer{
     width: 100%;
-    position: absolute;
+    position: static;
     bottom: 0;
     background: linear-gradient(to right, #00093c,#2d0b00);
     color: #fff;
     padding: 100px 0 30px; 
-    border-top-left-radius: 125px;
-    font-size: 13px;
+    /* border-top-left-radius: 125px; */
+    /* font-size: 13px; */
     line-height: 20px;
 }
 
 #text{
-    text-align: justify;
+    text-align: justify; 
 }
 
 .row{
@@ -34,7 +32,7 @@ footer{
 }
 
 .logo{
-    width: 100px;
+    width: 300px;
     margin-bottom: 30px;
 }
 
@@ -94,7 +92,7 @@ ul li a:hover{
 
 }
 
-form{
+.footer_form{
     padding-bottom: 15px;
     display: flex;
     align-items: center;
@@ -103,13 +101,13 @@ form{
     margin-bottom: 50px;
 }
 
-form .fa-solid{
+.footer_form .fa-solid{
     font-size: 18px;
     margin-right: 10px;
     color: white;
 }
 
-form input{
+.footer_form input{
     width: 100%;
     background: transparent;
     border: 0;
@@ -117,7 +115,7 @@ form input{
     outline: none;
 }
 
-form button{
+.footer_form button{
     background: transparent;
     border: 0;
     outline: none;
@@ -131,7 +129,7 @@ form button{
     border-radius: 50%;
     text-align: center;
     line-height: 4-px;
-    font-size: 20px;
+    /* font-size: 20px; */
     color: #000;
     background: #fff;
     margin-right: 15px;

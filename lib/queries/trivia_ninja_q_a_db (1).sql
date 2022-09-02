@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2022 at 01:07 PM
+-- Generation Time: Sep 02, 2022 at 12:03 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -45,6 +45,13 @@ CREATE TABLE `category` (
   `Cat_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`cat_id`, `Cat_name`) VALUES
+(1, 'math');
+
 -- --------------------------------------------------------
 
 --
@@ -65,8 +72,17 @@ CREATE TABLE `questions` (
   `Option_4` text NOT NULL,
   `Answer` varchar(255) NOT NULL,
   `Note` varchar(255) NOT NULL,
-  `Status` int(11) NOT NULL
+  `Status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`Question_id`, `Language_id`, `Cat_id`, `Sub_cat_id`, `user_id`, `Question_type`, `Question`, `Option_1`, `Option_2`, `Option_3`, `Option_4`, `Answer`, `Note`, `Status`) VALUES
+(5, 49, 34, 62, 80, 7, 'Delectus molestiae ', 'Magnam earum et dolo', 'Rerum rerum amet el', 'Enim repudiandae fug', 'Eum in dicta maxime ', 'Modi nulla aut aute ', 'Nihil dolor minim of', 0),
+(6, 94, 73, 7, 4, 82, 'Qui nulla id omnis e', 'Expedita fugit repe', 'Mollit placeat sit', 'Ipsum eum blanditiis', 'Rerum et a tempor in', 'Libero ipsum conseq', 'A ipsam quasi optio', 0),
+(7, 75, 31, 44, 44, 9, 'Est laboris molesti', 'Rerum mollit laborio', 'Explicabo Suscipit ', 'Sed nulla animi acc', 'Totam voluptate est ', 'Quasi culpa voluptas', 'Reprehenderit quod m', 0);
 
 -- --------------------------------------------------------
 
@@ -79,6 +95,13 @@ CREATE TABLE `sub_category` (
   `Sub_cat_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `sub_category`
+--
+
+INSERT INTO `sub_category` (`Sub_cat_id`, `Sub_cat_name`) VALUES
+(1, 'Easy');
+
 -- --------------------------------------------------------
 
 --
@@ -87,14 +110,22 @@ CREATE TABLE `sub_category` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
   `fname` text NOT NULL,
   `lname` text NOT NULL,
-  `tel` varchar(255) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tel` text NOT NULL,
   `password` varchar(255) NOT NULL,
   `reg_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `fname`, `lname`, `username`, `email`, `tel`, `password`, `reg_date`) VALUES
+(34, 'ndi', 'bob', 'Roul', 'bobycruz@gmail.com', '6454545454', '1111111111', '2022-08-31 21:23:32'),
+(44, 'afaff', 'werr', 'therese', 'ndiraoul@myiuc.com', '', '1111111111', '2022-09-01 15:30:34');
 
 --
 -- Indexes for dumped tables
@@ -144,25 +175,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `Question_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `sub_category`
 --
 ALTER TABLE `sub_category`
-  MODIFY `Sub_cat_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Sub_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

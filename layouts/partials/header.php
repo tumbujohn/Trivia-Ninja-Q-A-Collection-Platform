@@ -9,7 +9,12 @@
         </title>
         <link rel="stylesheet" href="../asset/css/header.css">
         <link rel="stylesheet" href="../asset/css/nav.css">
+        <link rel="stylesheet" href="../asset/css/footer.css">
+        <link rel="stylesheet" href="../asset/css/userprofile.css">
         <link rel="stylesheet" href="../asset/css/h_panel.css">
+        <link rel="stylesheet" href="../asset/css/style.css">
+
+        <script src="https://kit.fontawesome.com/3c3539d3c1.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
     <body>
@@ -33,7 +38,7 @@
             </div>
         </header>
    
-
+<div class="Dashboard-container">
 
 
 

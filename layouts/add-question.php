@@ -5,7 +5,7 @@ session_start();
         header('location:../login.php');
     }
     
-include ("profile.php");    
+// include ("profile.php");    
 
 
 include ("partials/header.php");
@@ -15,7 +15,7 @@ include ("partials/sidenav.php");
 
 ?>
 
-<form method="POST" action="partials/val_questions.php">
+       <form method="POST" class="questions" action="partials/val_questions.php">
 	
 			<label>Language_id:</label><input type="number" name="Language_id">
             <label>Cat_id:</label><input type="number" name="Cat_id">
@@ -34,3 +34,5 @@ include ("partials/sidenav.php");
 			<input type="submit" name="add">
       
 		</form>
+
+        <?php include ("./partials/footer.php"); ?>

@@ -53,8 +53,8 @@
   .pointer{
       cursor: pointer;
   }
-  #signin label,input{
-      text-transform: capitalize;
+  #signin label,#signin input{
+      text-transform: capitalize; 
       margin-bottom: 20px;
       padding: 5px 15px 5px 15px;
       font-size: 1.5em;

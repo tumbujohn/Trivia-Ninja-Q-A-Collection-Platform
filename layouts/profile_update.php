@@ -14,25 +14,14 @@
     $row = mysqli_fetch_assoc($sql);
     $res= $row['user_id'];
 
-       $update = "UPDATE users SET username='$username', password=$password, email='$email' WHERE user_id=$res";
+       $update = "UPDATE users SET username='$username', password='$password', email='$email' WHERE user_id=$res";
         $sql2=mysqli_query($db,$update);
 if($sql2)
        { 
-         // echo "<script>alert('Login Successfully!')</script>";
-           /*Successful*/
+        
            $_SESSION['username']=$username;
           header('location: dashboard.php');
-         //  echo "yeah!";       }
-//        else
-//        {
-//            /*sorry your profile is not update*/
-//            header('location:userprofile.php');
-//        }
-//     }
-//     else
-//     {
-//         /*sorry your id is not match*/
-//         header('location:userprofile.php');
+      
      }
    }
 ?>

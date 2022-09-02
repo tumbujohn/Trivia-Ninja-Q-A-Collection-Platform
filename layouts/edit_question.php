@@ -6,7 +6,7 @@ session_start();
         header('location:../login.php');
     }
     
-include ("profile.php");    
+// include ("profile.php");    
 
 
 include ("partials/header.php");
@@ -39,7 +39,5 @@ include ("partials/sidenav.php");
 		<input type="submit" name="update" value="update">
 	
 	</form>
-
-
-</body>
-</html>
+    
+    <?php include ("./partials/footer.php"); ?>

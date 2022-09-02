@@ -18,7 +18,7 @@ include ("partials/sidenav.php");
 <div>
 
 
-<?php include ("./partials/hpanel.php"); ?>
+<?php include ("./partials/n_panel.php"); ?>
 <!-- we will have all (the above includes) in this div -->
 
 </div>

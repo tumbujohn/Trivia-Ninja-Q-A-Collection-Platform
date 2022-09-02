@@ -5,15 +5,15 @@ session_start();
         header('location:login.php');
     }
     
-include ("profile.php");    
+// include ("profile.php");    
 include ("partials/header.php");
 include ("partials/sidenav.php");
 // include ("./partials/panel");
-// include ("./partials/footer");
 
 ?>
 
-    <div class="container">
+<div class="form-wrapper">
+    <div class="form-container">
         <?php
          $username=$_SESSION['username'] ;
 
@@ -23,8 +23,10 @@ include ("partials/sidenav.php");
          if ($sql) {
             $fetch = mysqli_fetch_assoc($sql);
         ?>
+        <div class="profile-header">
         <h2>Edit Profile</h2>
         <i class="fa fa-user"></i>
+        </div>
         <form action="profile_update.php" method="POST">
             
             <input type="text" name="username" id="username" value="<?php echo $fetch['username'] ?>">
@@ -44,7 +46,5 @@ include ("partials/sidenav.php");
 ?>
 
     </div>
-   
-    </body>
-</html>
-<?php//include ("partials/sidenav.php"); ?>
+    </div>
+<?php include ("./partials/footer.php"); ?>
