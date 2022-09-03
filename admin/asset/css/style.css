@@ -1,0 +1,18 @@
+
+.Dashboard-container{
+    display: flex;
+    overflow: hidden;
+}
+
+/* styling for table of questions */
+.table-wrapper{
+    width: 100%;
+    border: 5px solid red;
+}
+
+.text-AQ{
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: blue;
+    border-radius: 2%;
+}

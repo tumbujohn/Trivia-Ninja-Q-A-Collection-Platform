@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  body{
+      background-color: rgb(215, 215, 215);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .login{
+      width: 100%;
+      height: 100%;
+  }
+  #logo{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  #logo img{
+      width: 300px;
+      height: 300px;
+      border-radius: 150px;
+      background-color: rgb(4, 4, 29);
+      margin-top: 50px;
+  }
+  
+  #sect{
+      margin:20px 0 80px 0;
+      padding: 0 50px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  
+  }
+  #signin{
+      background:#41a2c8;
+      text-align: center;
+      width: 100%;
+      height: 450px;
+      box-shadow: 0px 0px 20px 5px rgb(6, 6, 51);
+  }
+  #log{
+      text-align: center;
+      color:rgb(9, 9, 59);
+      font-size: 3em;
+      padding: 25px 5px;
+  }
+  .pointer{
+      cursor: pointer;
+  }
+  #signin label,#signin input{
+      text-transform: capitalize; 
+      margin-bottom: 20px;
+      padding: 5px 15px 5px 15px;
+      font-size: 1.5em;
+      font-weight: 700;
+      border-style: none;
+      border-radius: 15px;
+  }
+  #color{
+      margin-top: 25px;
+      background-color: rgb(9, 9, 59);
+      font-size: 2em;
+      padding: 5px 30px;
+      color: white;
+      letter-spacing: 0.1em;
+  }
+  #color:hover{
+      color:rgb(12, 12, 49);
+      background-color:white ;
+  }
+  
+  #don{
+      margin-top: 25px;
+  }
+  #don label{
+      margin-right: 25px;
+  }
+  #don input{
+      cursor: pointer;
+      background-color: transparent;
+      border-style: none;
+      
+  }
+  #signup{
+      background-color:rgb(32,42,68);
+      text-align: center;
+      width: 100%;
+      height: 450px;
+      box-shadow: 0px 0px 20px 5px rgb(6, 6, 51);
+  }
+  #signup h1{
+      text-align: center;
+      text-transform: uppercase;
+      color:#1da6dc;
+      font-size: 3em;
+      word-spacing: 0.9em;
+      margin-top: 80px;
+  }
+  #signup h4{
+      color: white;
+      font-size: 1.5em;
+      word-spacing:0.7em ;
+      letter-spacing:0.2em ;
+      margin: 80px 0 20px 0;
+  
+  }
+  #signup a{
+      text-decoration: none;
+      font-size: 2.5em;
+      padding: 5px 20px 0 20px;
+      font-weight: 700;
+      border: 2px solid white ;
+      background-color: white;
+      border-radius: 20px;
+      color:rgb(9, 9, 59);
+  }
+  #signup a:hover{
+      color:white;
+      font-weight: 700;
+      background-color: rgb(9, 9, 59);
+  }
+  @media(min-width:992px){
+      
+      #sect{
+          flex-direction: row;
+      }
+      #logo img{
+          width: 200px;
+          height: 200px;
+          border-radius: 100px;
+          background-color: rgb(4, 4, 29);
+          margin-top: 50px;
+      }
+      #signup h4{
+          margin: 110px 0 50px 0;
+      }
+      #signup h1{
+          font-size: 3.5em;
+          word-spacing: 0.7em;
+      }
+  }
+  

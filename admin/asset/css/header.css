@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+}
+
+
+#header{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left, #00093c,#2d0b00);
+    color:white;
+    font-size: 2em;
+    padding: 5px 10px;
+}
+.head{
+    cursor: pointer;
+}
+.head a{
+    color: white;
+}
+#header i{
+    margin: 0 5px;
+}
+#user{
+    flex:3;
+    text-align: end;
+    padding-right: 40px;
+}
+#log{
+    text-decoration: none;
+}
+
+
