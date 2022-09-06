@@ -2,6 +2,7 @@
         <div id="nav-bar">
 
      <i class="fa fa-home" ><a href="dashboard.php">Home</a></i>
+     
 
             <i class="fa fa-bell"><a href="notification.php">Notification</a></i>
 
