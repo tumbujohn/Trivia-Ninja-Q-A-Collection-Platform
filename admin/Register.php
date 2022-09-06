@@ -13,8 +13,8 @@ if(isset($_POST['signup'])){
   $fname = $_POST['fname'];
   $lname = $_POST['lname'];
   $username = $_POST['username'];
-  $tel = $_POST['tel'];
   $email = $_POST['email'];
+  $tel = $_POST['tel'];
   $password = $_POST['password'];
    $cpassword = $_POST['cpassword'];
 
@@ -24,7 +24,7 @@ if(isset($_POST['signup'])){
   }
   else{
    
-    $pass=md5($password);
+    $pass=($password);
 
   $sql = "INSERT INTO admin (fname, lname, username, email,tel, password) VALUES ('$fname', '$lname','$username','$email','$tel','$pass')";
   $send=mysqli_query($db, $sql);

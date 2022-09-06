@@ -1,3 +1,8 @@
+<?php
+# Include connection
+include "lib/helpers/connection.db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +35,9 @@
 						</div>
 					</div>
 				</div>
+
+
+
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
@@ -39,14 +47,31 @@
 									<label for="selectAll"></label>
 								</span>
 							</th>
+							<th>user_id</th>
 							<th>username</th>
 							<th>email</th>
 							<th>Phone</th>
-							<th>Question</th>
+							
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
+					<?php 
+
+ 
+$sql = "SELECT * FROM users";
+ 
+$query = mysqli_query($db,$sql);
+ 
+if(!$query)
+{
+    echo "Query does not work.".mysqli_error($db);die;
+}
+ 
+while($data = mysqli_fetch_array($query))
+{
+	?>
+   
 						<tr>
 							<td>
 								<span class="custom-checkbox">
@@ -54,86 +79,26 @@
 									<label for="checkbox1"></label>
 								</span>
 							</td>
-							<td>Thomas Hardy</td>
-							<td>thomashardy@mail.com</td>
-							<td>(171) 555-2222</td>
-							<td>89</td>
 							
-							<td>
-							
-								<a href="#editUserModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-								<a href="#deleteUserModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class="custom-checkbox">
-									<input type="checkbox" id="checkbox2" name="options[]" value="1">
-									<label for="checkbox2"></label>
-								</span>
-							</td>
-							<td>Dominique Perrier</td>
-							<td>dominiqueperrier@mail.com</td>
-							<td>(313) 555-5735</td>
-							<td>57</td>
-						
-							<td>
-								<a href="#editUserModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-								<a href="#deleteUserModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class="custom-checkbox">
-									<input type="checkbox" id="checkbox3" name="options[]" value="1">
-									<label for="checkbox3"></label>
-								</span>
-							</td>
-							<td>Maria Anders</td>
-							<td>mariaanders@mail.com</td>
-							<td>(503) 555-9931</td>
-							<td>25,</td>
+							<td><?php echo $data['user_id']."<br>";?></td>
+                        
+                            <td><?php echo $data['username']."<br>";?></td>
 
+							<td><?php echo $data['email']."<br>";?></td>
+                        
+                            <td><?php echo $data['tel']."<br>";?></td>
 							
 							<td>
+                            
+							
 								<a href="#editUserModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								<a href="#deleteUserModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
+<?php							
+}
+?>
 						</tr>
-						<tr>
-							<td>
-								<span class="custom-checkbox">
-									<input type="checkbox" id="checkbox4" name="options[]" value="1">
-									<label for="checkbox4"></label>
-								</span>
-							</td>
-							<td>Fran Wilson</td>
-							<td>franwilson@mail.com</td>
-							<td>(204) 619-5731</td>
-							<td>67</td>
-							
-							<td>
-								<a href="#editUserModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-								<a href="#deleteUserModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-							</td>
-						</tr>					
-						<tr>
-							<td>
-								<span class="custom-checkbox">
-									<input type="checkbox" id="checkbox5" name="options[]" value="1">
-									<label for="checkbox5"></label>
-								</span>
-							</td>
-							<td>Martin Blank</td>
-							<td>martinblank@mail.com</td>
-							<td>(480) 631-2097</td>
-							<td>34</td>
-							
-							<td>
-								<a href="#editUserModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-								<a href="#deleteUserModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-							</td>
-						</tr> 
+					
 					</tbody>
 				</table>
 				<div class="clearfix">

@@ -94,6 +94,8 @@ include ("partials/sidenav.php");
         <option value="b">Option 2</option>
         <option value="c">Option 3</option>
         <option value="d">Option 4</option>
+        <option value="d">True</option>
+        <option value="d">False</option>
     </select>
     </div>
 
@@ -105,6 +107,7 @@ include ("partials/sidenav.php");
     <div class="edit-grp sub">
 		<input type="submit" name="update" value="update">
     </div>
+
 
 	</form>
   </div>
