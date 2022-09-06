@@ -6,7 +6,7 @@ require "../../lib/helpers/connection.db.php";
 # Define variables and initialize with empty values
 
 
-if(isset($_POST['add'])){
+if(isset($_POST['add_quest'])){
 
   $Language_id = $_POST['Language_id'];
   $Cat_id = $_POST['Cat_id'];
@@ -28,7 +28,7 @@ VALUES ( '$Language_id', '$Cat_id','$Sub_cat_id', '$user_id', '$Question_type','
   
   if($send){
     echo '<script>alert("Qusetion successfully added");</script>';
-    echo "<script>" . "window.location.href='../dashboard.php';" . "</script>";
+    echo "<script>" . "window.location.href='../question_table.php';" . "</script>";
     // header("location:../dashboard.php");
     // exit();
   }
