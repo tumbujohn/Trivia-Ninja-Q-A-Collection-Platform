@@ -23,7 +23,7 @@ if($del_question){
     echo '<script>alert("Qusetion successfully deleted");</script>';
   }
   else{
-    echo "Error:" .$sql . "<br>" . mysql_error($db);
+    echo "Error:" .$sql . "<br>";
   }
 
 }
@@ -52,7 +52,7 @@ $user_id= $_SESSION['user_id'];
 
 $query = mysqli_query($db, "SELECT * FROM `questions` WHERE  `user_id` = $user_id ") 
 or 
-die(mysqli_error());
+die();
 $row = mysqli_num_rows($query);
 
 if($row>0){

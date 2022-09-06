@@ -14,7 +14,7 @@ include ("partials/sidenav.php");
 // include ("./partials/panel");
 // include ("./partials/footer");
 
-?>
+?> 
 
    <div class = 'edit-wrapper'>
 	<form method="POST" action="update_question.php?id=<?php echo $Question_id; ?>">
@@ -58,7 +58,7 @@ include ("partials/sidenav.php");
 
     
     <div class="edit-grp">
-    <label>Question </label>
+    <label class ='op'>Question </label>
     <input type="text" name="Question" placeholder="Enter question">
     </div>
 
@@ -103,7 +103,7 @@ include ("partials/sidenav.php");
     <textarea name="Note" id="" cols="10" rows="3"></textarea>
     </div>
     <div class="edit-grp sub">
-		<input type="submit" name="update" value="update">
+		<input type="submit" name="add_quest" value="ADD">
     </div>
 
 	</form>

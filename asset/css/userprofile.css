@@ -17,16 +17,16 @@
     border-radius: 15px;
     padding: 25px 10px;
     box-shadow: 0 0 15px rgb(80, 79, 79);
-    border: 5px solid orange;
+    border: 3px solid rgb(9, 9, 59);
 }
 
-form {
+.form-wrapper .form-container  form {
     display: flex;
     flex-direction: column;
     width: 90%;
 }
 
-input {
+.form-wrapper .form-container form input {
     height: 40px;
     border-radius: 10px;
     border: none;
@@ -38,12 +38,12 @@ input {
     background-color: rgb(48, 46, 46);
 }
 
-.btns {
+.form-wrapper .form-container form .btns {
     margin: 15px auto;
 }
 
-button {
-    background-color: rgb(0, 0, 0);
+.form-wrapper .form-container form button {
+    background-color: rgb(9, 9, 59);
     color: white;
     border: none;
     padding: 8px 30px;
@@ -53,12 +53,18 @@ button {
     margin: 5px 25px;
 }
 
-button:hover {
+.form-wrapper .form-container form button:hover {
     background-color: tomato;
 }
 
-p {
-    color: red;
-    text-align: center;
-    display: none;
+.form-wrapper .form-container .profile_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid silver;
+    margin-bottom: 10px;
+}
+
+.form-wrapper .form-container .profile_header i{
+    margin: 0 10px;
 }

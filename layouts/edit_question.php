@@ -61,7 +61,7 @@ include ("partials/sidenav.php");
 
     
     <div class="edit-grp">
-    <label>Question </label>
+    <label class ='op'>Question </label>
     <input type="text" name="Question" value="<?php echo $row['Question']; ?>">
     </div>
 

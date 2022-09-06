@@ -5,132 +5,86 @@ footer{
     position: static;
     bottom: 0;
     background: linear-gradient(to right, #00093c,#2d0b00);
-    color: #fff;
-    padding: 100px 0 30px; 
-    /* border-top-left-radius: 125px; */
-    /* font-size: 13px; */
-    line-height: 20px;
-}
-
-#text{
-    text-align: justify; 
+    padding: 50px  30px 20px 30px; 
+  font-size: 1.2em;
 }
 
 .row{
-    width: 85%;
-    margin: auto;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between ;
+  justify-content: space-around;
+ flex-direction: column;
+    border-bottom: 2px solid rgba(192, 192, 192, 0.63);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.row .col{
+    width: 100%;
+    padding: 5px ;
+    text-align: center;
+    color: white;
+    margin:  20px ;
+}
+.row .col p{
+    display: block;
+    color: white;
+    margin: 5px 0;
 }
 
-.col{
-    flex-basis: 25%;
-    padding: 10px;
-
+.row .logo img{
+    width: 200px;
+    height: 100px;
+}
+.row .logo p{
+  text-align: left;
 }
 
-.logo{
-    width: 300px;
-    margin-bottom: 30px;
+.row .col h3{
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-.col h3{
-    width: fit-content;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.email-id{
-    width: fit-content;
-    border-bottom:  1px solid #ccc;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: 0.8s all ease;
-}
-
-.number{
-    border-bottom: 1px solid#ccc;
-    width: fit-content;
-}
-
-.number:hover{
-    color: turquoise;
-    cursor: pointer;
-    transform: scale(1.09);
-    transition: 0.8s all ease;
-    width: fit-content;
-}
-
-.email-id:hover{
-    color: turquoise;
-    border-bottom: none;
-    transform: scale(1.09);
-}
-
-ul{
-    padding-left: 0px;
-}
-
-ul li{
+.row .links ul{
     list-style: none;
-    margin-bottom: 12px;
-
 }
-
-ul li a{
+.row .links ul li a{
+    color: white;
     text-decoration: none;
-    color: #fff;
-    transition: 0.5s all ease;
 }
 
-ul li a:hover{
-    color: turquoise;
-    transform: scale(1.25);
-    cursor: pointer;
-
-}
-
-.footer_form{
-    padding-bottom: 15px;
+.newsletter{
+    width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid#ccc;
-    margin-bottom: 50px;
-}
-
-.footer_form .fa-solid{
-    font-size: 18px;
-    margin-right: 10px;
+    flex-direction: column;
+    margin: 20px 0;
     color: white;
 }
-
-.footer_form input{
+.newsletter form{
     width: 100%;
-    background: transparent;
-    border: 0;
-    color: #ccc;
-    outline: none;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: 10px 0;
 }
 
-.footer_form button{
-    background: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    color: #ccc;
+.newsletter .social-icon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.newsletter .social-icon i{
+    margin: 0 10px;
 }
 
-.social-icon i .fa-brands{
-    width: auto;
-    height: auto;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 4-px;
-    /* font-size: 20px; */
-    color: #000;
-    background: #fff;
-    margin-right: 15px;
+@media(min-width:992px){
+    
+.row{
+ flex-direction: row;
+}
 }
