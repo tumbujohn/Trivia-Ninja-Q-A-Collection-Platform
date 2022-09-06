@@ -1,28 +1,14 @@
 
-<?php
-# Include connection
-include "../lib/helpers/connection.db.php";
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manage Questions</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/admin.css">
-<script src="js/popup.js"></script>
-</head>
 
-<body>
-    <div class="container">
+
+<!-- The main control board or panel for the dashboard,  aligned next to the side nav -->
+
+<div class="all__users" >
+      
+
+
+	<div class="container">
 		<div class="table-responsive">
 			<div class="table-wrapper">
 				<div class="table-title">
@@ -31,8 +17,7 @@ include "../lib/helpers/connection.db.php";
 							<h2>Manage <b>Questions</b></h2>
 						</div>
 						<div class="col-xs-6">
-							<a href="#editquestion" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Question</span></a>
-							<a href="#deleteUserModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+						
 						</div>
 						
 					</div>
@@ -56,18 +41,18 @@ include "../lib/helpers/connection.db.php";
 					<?php 
 
  
-$sql = "SELECT * FROM questions";
+							$sql = "SELECT * FROM questions order by Question_id DESC"; 
  
-$query = mysqli_query($db,$sql);
+							$query = mysqli_query($db,$sql);
  
-if(!$query)
-{
-    echo "Query does not work.".mysqli_error($db);die;
-}
+									if(!$query)
+									{		
+    									echo "Query does not work.".mysqli_error($db);die;
+									}
  
-while($data = mysqli_fetch_array($query))
-{
-	?>
+								while($data = mysqli_fetch_array($query))
+									{		
+								?>
    
 						<tr>
 							<td>
@@ -88,13 +73,12 @@ while($data = mysqli_fetch_array($query))
 							
 								<a href="#editquestion" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								
-								<a href="#More" class="edit" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE254;</i></a>
-
-								<a href="#deletequestion" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+								<a href="#More" class="delete" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE15C;</i></a>
+								
 							</td>
-<?php							
-}
-?>
+							<?php							
+								}
+							?>
 						</tr>
 					
 					</tbody>
@@ -114,7 +98,9 @@ while($data = mysqli_fetch_array($query))
 			</div>
 		</div>        
     </div>
+
 	<!-- Edit Modal HTML -->
+
 	<div id="More" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -182,8 +168,6 @@ while($data = mysqli_fetch_array($query))
 			</div>
 		</div>
 	</div>
-
-
 						<tr>
 							<td>
 								<span class="custom-checkbox">
@@ -191,9 +175,12 @@ while($data = mysqli_fetch_array($query))
 									<label for="checkbox1"></label>
 								</span>
 							</td>
+
+						</tr>
 				
 					
 	<!-- Edit Modal HTML -->
+
 	<div id="editquestion" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -262,28 +249,43 @@ while($data = mysqli_fetch_array($query))
 			</div>
 		</div>
 	</div>
+
 	<!-- Delete Modal HTML -->
+
 	<div id="deletequestion" class="modal fade">
+
 		<div class="modal-dialog">
+
 			<div class="modal-content">
+
 				<form>
+
 					<div class="modal-header">						
 						<h4 class="modal-title">Delete Question</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
+
 					<div class="modal-body">					
-						<p>Are you sure you want to delete this Question?</p>
+						<p>Are you sure you want to delete these Question?</p>
 						<p class="text-warning"><small>This action cannot be undone.</small></p>
 					</div>
+
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<input type="submit" class="btn btn-danger" value="Delete">
 					</div>
+
 				</form>
+
 			</div>
+
 		</div>
+
 	</div>
 
 
-</body>
-</html>
+</div>
+
+
+
+
