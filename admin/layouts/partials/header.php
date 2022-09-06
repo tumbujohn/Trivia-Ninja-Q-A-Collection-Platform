@@ -43,7 +43,7 @@
     <a href="../layouts/userprofile.php"><i class="fa fa-user"></i>
     <?php echo $_SESSION['username']; ?> 
     </a>
-    <a id="log" href="../logout.php">Log out</a> 
+    <a id="log" href="../../logout.php">Log out</a> 
             </div>
 
         </header>

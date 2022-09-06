@@ -34,7 +34,7 @@ if(isset($_GET['id']) && isset($_POST['update'])){
   
   if($send){
     echo '<script>alert("Qusetion successfully Updated");</script>';
-    echo "<script>" . "window.location.href='dashboard.php';" . "</script>";
+    echo "<script>" . "window.location.href='question_table.php';" . "</script>";
     // header("location:../dashboard.php");
     // exit();
   }
