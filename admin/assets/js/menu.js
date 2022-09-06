@@ -1,6 +1,6 @@
 
 function openNav(){
-    document.getElementById("sidenav").style.width="50%";
+    document.getElementById("sidenav").style.width="40%";
     document.getElementById("bar").style.display="none";
     document.getElementById("clos").style.display="block";
 }

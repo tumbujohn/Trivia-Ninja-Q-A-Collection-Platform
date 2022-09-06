@@ -39,10 +39,10 @@ if(isset($_GET['id']) && isset($_POST['update'])){
     // exit();
   }
   else{
-    echo "Error:" .$sql . "<br>" . mysql_error($db);
+    echo "Error:" .$sql . "<br>" ;
   }
 }else{
-    echo "question does not esist";
+    echo "Question does not esist";
 }
 
   

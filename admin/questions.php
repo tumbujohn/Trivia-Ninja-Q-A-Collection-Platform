@@ -1,7 +1,7 @@
 
 <?php
 # Include connection
-include "lib/helpers/connection.db.php";
+include "../lib/helpers/connection.db.php";
 ?>
 
 <!DOCTYPE html>

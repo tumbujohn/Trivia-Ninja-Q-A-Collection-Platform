@@ -2,23 +2,21 @@
     
 </div>
 <!-- end of dasboard container -->
-
+<!--  
     <footer>
         <div class="row">
-            <div class="col">
-                <img src="../asset/images/trivia.png" alt="logo" class="logo">
-                <p id="text"> subscribe to get latest updates on trivia ninja day to day update on their latesr release
-                    about their app so you won't miss out or be left behind by what this amazing app has to offer to you
+            <div class="col logo">
+                <img src="../../asset/images/trivia.png" alt="logo">
+                <p>Subscribe to get latest updates on Trivia Ninja app so you won't miss out or be left behind by what this amazing features the app has to offer to you.
                 </p>
             </div>
-            <div class="col">
-                <h3>Office</h3>
-                <p>BUEA</p>
-                <p>BUNDUMA GATE, Cameroon</p>
+            <div class="col location">
+                <h3>Our Office</h3>
+                <p>Bonduma Gate, Buea.</p>
                 <p class="email-id">trivianinja@gmail.com</p>
                 <h4 class="number">+237 67******0</h4>
             </div>
-            <div class="col">
+            <div class="col links">
                 <h3>Links</h3>
                 <ul>
                     <li><a href="">Home</li>
@@ -28,7 +26,8 @@
                     <li><a href="">Contact Us</li>
                 </ul>
             </div>
-            <div class="col">
+        </div>
+        <div class="newsletter">
                 <h3>Newsletter</h3>
                 <form class="footer_form">
                     <i class="fa-solid fa-envelope"></i>
@@ -41,7 +40,6 @@
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>
             </div>
-        </div>
-    </footer>
+    </footer> -->
 </body>
 </html>

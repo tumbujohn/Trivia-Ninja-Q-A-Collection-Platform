@@ -19,25 +19,96 @@ include ("partials/sidenav.php");
 	$row=mysqli_fetch_assoc($sql);
 ?>
 
-	<h2>Edit</h2>
+   <div class = 'edit-wrapper'>
 	<form method="POST" action="update_question.php?id=<?php echo $Question_id; ?>">
 
-		
-        <label>Language_id:</label><input type="number" name="Language_id" value="<?php echo $row['Language_id']; ?>">
-            <label>Cat_id:</label><input type="number" name="Cat_id" value="<?php echo $row['Cat_id']; ?>">
-            <label>Sub_cat_id:</label><input type="number" name="Sub_cat_id" value="<?php echo $row['Sub_cat_id']; ?>">
-           <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
-            <label>Question_type:</label><input type="number" name="Question_type" value="<?php echo $row['Question_type']; ?>">
-            <label>Question:</label><input type="text" name="Question" value="<?php echo $row['Question']; ?>">
-            <label>Option_1:</label><input type="text" name="Option_1" value="<?php echo $row['Option_1']; ?>">
-            <label>Option_2:</label><input type="text" name="Option_2" value="<?php echo $row['Option_2']; ?>">
-            <label>Option_3:</label><input type="text" name="Option_3" value="<?php echo $row['Option_3']; ?>">
-            <label>Option_4:</label><input type="text" name="Option_4" value="<?php echo $row['Option_4']; ?>">
-            <label>Answer:</label><input type="text" name="Answer" value="<?php echo $row['Answer']; ?>">
-            <label>Note:</label><input type="text" name="Note" value="<?php echo $row['Note']; ?>">
+    <div class="edit-grp">
+    <label>Language</label>
+    <select name="Language_id" id="">
+        <option value="1">English</option>
+        <option value="2">French</option>
+    </select>
+    </div>
 
-		<input type="submit" name="update" value="update">
-	
-	</form>
     
+    <div class="edit-grp selects">
+    <label>Subject</label>
+    <select name="Cat_id" id="">
+        <option value="1">English</option>
+        <option value="2">French</option>
+        <option value="2">Math</option>
+    </select>
+    </div>
+
+    
+    <div class="edit-grp selects">
+    <label>Difficulty</label>
+    <select name="Sub_cat_id" id="">
+        <option value="1">Easy</option>
+        <option value="2">Hard</option>
+        <option value="3">Medium</option>
+    </select>
+    </div>
+
+    
+    <div class="edit-grp selects">
+    <label>Question Type</label>
+    <select name="Question_type" id="">
+        <option value="1">MCQ</option>
+        <option value="2">True/False</option>
+    </select>
+    </div>
+
+    
+    <div class="edit-grp">
+    <label class ='op'>Question </label>
+    <input type="text" name="Question" value="<?php echo $row['Question']; ?>">
+    </div>
+
+    
+    
+    <div class="edit-grp">
+    <label class ='op'>Option 1</label>
+    <input type="text" name="Option_1" value="<?php echo $row['Option_1']; ?>">
+    </div>
+
+    
+    <div class="edit-grp">
+    <label class ='op'>Option 2</label>
+    <input type="text" name="Option_1" value="<?php echo $row['Option_2']; ?>">
+    </div>
+
+    
+    <div class="edit-grp">
+    <label class ='op'>Option 3</label>
+    <input type="text" name="Option_1" value="<?php echo $row['Option_3']; ?>">
+    </div>
+    
+    <div class="edit-grp">
+    <label class ='op'>Option 4</label>
+    <input type="text" name="Option_1" value="<?php echo $row['Option_4']; ?>">
+    </div>
+    
+    
+    <div class="edit-grp">
+    <label>Answer</label>
+    <select name="Answer" id="">
+        <option value="a">Option 1</option>
+        <option value="b">Option 2</option>
+        <option value="c">Option 3</option>
+        <option value="d">Option 4</option>
+    </select>
+    </div>
+
+    
+    <div class="edit-grp">
+    <label>Note</label>
+    <textarea name="Note" id="" cols="10" rows="3"><?php echo $row['Note']; ?></textarea>
+    </div>
+    <div class="edit-grp sub">
+		<input type="submit" name="update" value="update">
+    </div>
+
+	</form>
+  </div>
     <?php include ("./partials/footer.php"); ?>

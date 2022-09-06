@@ -1,0 +1,32 @@
+
+      h1{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    margin: 40px 30px;
+  }
+  .dash{
+    width: 100%;
+    margin-bottom: 30px;
+    
+  }
+  .flexboxs{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     }
+
+  .flex1{
+    width: 220px;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid black;
+    padding: 40px;
+    background: rgb(3, 3, 43);
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 6px 8px 9px rgba(0, 0, 0, 0.814);
+
+    }

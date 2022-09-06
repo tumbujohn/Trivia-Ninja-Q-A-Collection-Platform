@@ -23,7 +23,7 @@ include ("partials/sidenav.php");
          if ($sql) {
             $fetch = mysqli_fetch_assoc($sql);
         ?>
-        <div class="profile-header">
+        <div class="profile_header">
         <h2>Edit Profile</h2>
         <i class="fa fa-user"></i>
         </div>
@@ -31,7 +31,7 @@ include ("partials/sidenav.php");
             
             <input type="text" name="username" id="username" value="<?php echo $fetch['username'] ?>">
             <input type="email" name="email" id="email" value="<?php echo $fetch['email'] ?>">
-            <input type="password" name="password" id="pass"  required>
+            <input type="password" name="password" placeholder="enter your pasword"  required>
 
             <div class="btns">
                 <button type="submit" name="update">Update</button>

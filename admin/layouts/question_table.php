@@ -23,7 +23,7 @@ if($del_question){
     echo '<script>alert("Qusetion successfully deleted");</script>';
   }
   else{
-    echo "Error:" .$sql . "<br>" . mysql_error($db);
+    echo "Error:" .$sql . "<br>";
   }
 
 }
@@ -31,12 +31,19 @@ if($del_question){
 ?>
  
  <div class="table-wrapper">
- <a href="add-question.php" class = text-AQ>Add question</a>
+
+ <div class= 'text-AQ'>
+ <a href="add-question.php" >Add question</a>
+</div>
 
 <table>
-    <thead>
+    <thead id = 'txt'> 
         <th>Question</th>
-        <th>Author</th>
+        <th>Option A </th>
+        <th>Option B</th>
+        <th>Option C</th>
+        <th>Option D</th>
+        <th>Status </th>
         <th>Actions</th>
     </thead>
     <tbody>
@@ -45,7 +52,7 @@ $user_id= $_SESSION['user_id'];
 
 $query = mysqli_query($db, "SELECT * FROM `questions` WHERE  `user_id` = $user_id ") 
 or 
-die(mysqli_error());
+die();
 $row = mysqli_num_rows($query);
 
 if($row>0){
@@ -54,10 +61,31 @@ if($row>0){
 
 <tr>
     <td><?php echo $fetch['Question'] ?></td>
-    <td><?php echo $fetch['user_id'] ?></td>
+    <td><?php echo $fetch['Option_1'] ?></td>
+    <td><?php echo $fetch['Option_2'] ?></td>
+    <td><?php echo $fetch['Option_3'] ?></td>
+    <td><?php echo $fetch['Option_4'] ?></td>
+    <td><?php 
+    if($fetch['Status'] == 1){
+        echo 'Vetted';
+    }else{
+        echo  'To be vetted';
+    }
+    ?></td>
     <td>
-        <a href="edit_question.php?qid=<?php echo $fetch['Question_id'] ?>" >Edit</a>
-        <a href="question_table.php?qid=<?php echo $fetch['Question_id'] ?>">Delete</a>
+       <?php
+if($fetch['Status']==0){
+    ?>
+     <a class ='edit' href="edit_question.php?qid=<?php echo $fetch['Question_id'] ?>" >Edit</a>
+        <a class = 'delete' href="question_table.php?qid=<?php echo $fetch['Question_id'] ?>">Delete</a>
+        <?php
+}else{
+    ?>
+    <a class ='disable' href="#" >Edit</a>
+        <a class = 'disable' href="#">Delete</a>
+    <?php
+}
+       ?>
 </td>
 </tr>
 

@@ -13,7 +13,8 @@
     align-items: left;
     flex-direction: column;
     padding: 20px;
-    font-size: 1.2rem;
+    font-family: unset;
+  
 }
 #nav-bar i{
     margin:10px 0 ;
@@ -28,7 +29,10 @@
 /* media query */
 @media(min-width:992px){
     .na{
-        width:30%;
         position: unset;
+        width:25%;
+    }
+    #nab-bar{
+  font-size: 1.2rem;
     }
 }
