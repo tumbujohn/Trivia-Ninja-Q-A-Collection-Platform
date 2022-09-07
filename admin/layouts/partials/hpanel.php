@@ -104,7 +104,7 @@ while($data = mysqli_fetch_array($query))
         <div class="noter">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form action="hpanel_edit_question.php" method="POST">
 					<div class="modal-header">						
 						<h4 class="modal-title">Add User</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -130,8 +130,9 @@ while($data = mysqli_fetch_array($query))
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-success" value="Add">
+						<input type="submit" class="btn btn-success" value="Add" name="add">
 					</div>
+				
 				</form>
 			</div>
 		</div>

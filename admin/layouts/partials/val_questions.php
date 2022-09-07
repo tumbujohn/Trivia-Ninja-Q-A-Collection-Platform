@@ -27,7 +27,7 @@ VALUES ( '$Language_id', '$Cat_id','$Sub_cat_id', '$user_id', '$Question_type','
   $send=mysqli_query($db, $sql);
   
   if($send){
-    echo '<script>alert("Qusetion successfully added");</script>';
+    echo '<script>alert("Question successfully added");</script>';
     echo "<script>" . "window.location.href='../dashboard.php';" . "</script>";
     // header("location:../dashboard.php");
     // exit();
