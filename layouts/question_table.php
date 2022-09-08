@@ -38,6 +38,7 @@ if($del_question){
 
 <table>
     <thead id = 'txt'> 
+        <th>S\N </th>
         <th>Question</th>
         <th>Option A </th>
         <th>Option B</th>
@@ -55,11 +56,15 @@ or
 die();
 $row = mysqli_num_rows($query);
 
+$sn = 1;
+
 if($row>0){
     while($fetch = mysqli_fetch_assoc($query)){
+       
 ?>
 
 <tr>
+    <td><?php echo $sn++ ?></td>
     <td><?php echo $fetch['Question'] ?></td>
     <td><?php echo $fetch['Option_1'] ?></td>
     <td><?php echo $fetch['Option_2'] ?></td>
