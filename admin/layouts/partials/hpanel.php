@@ -42,18 +42,18 @@
 					<?php 
 
  
-$sql = "SELECT * FROM users";
+					$sql = "SELECT * FROM users order by user_id desc";
  
-$query = mysqli_query($db,$sql);
+					$query = mysqli_query($db,$sql);
  
-if(!$query)
-{
-    echo "Query does not work.".mysqli_error($db);die;
-}
+					if(!$query)
+					{					
+    					echo "Query does not work.".mysqli_error($db);die;
+					}
  
-while($data = mysqli_fetch_array($query))
-{
-	?>
+					while($data = mysqli_fetch_array($query))
+					{
+						?>
    
 						<tr>
 							<td>
@@ -104,30 +104,38 @@ while($data = mysqli_fetch_array($query))
         <div class="noter">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="hpanel_edit_question.php" method="POST">
+				<form action="../adduser.php" method="POST">
 					<div class="modal-header">						
 						<h4 class="modal-title">Add User</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-					<div class="modal-body">					
+					<div class="modal-body">
+					<div class="form-group">
+							<label>First Name</label>
+							<input type="text" name="fname" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>Last Name</label>
+							<input type="text" name="lname" class="form-control" required>
+						</div>					
 						<div class="form-group">
 							<label>username</label>
-							<input type="text" class="form-control" required>
+							<input type="text" name="username" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>email</label>
-							<input type="email" class="form-control" required>
+							<input type="email" name="email" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Phone</label>
-							<input type="text" class="form-control" required>
+							<input type="text" class="form-control" name="tel" required>
 						</div>
 						<div class="form-group">
 							<label>Password</label>
-							<textarea class="form-control" required></textarea>
+							<textarea class="form-control" name="password" required></textarea>
 						</div>
 											
-					</div>
+					</div> 
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<input type="submit" class="btn btn-success" value="Add" name="add">

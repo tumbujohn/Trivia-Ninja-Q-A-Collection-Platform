@@ -32,26 +32,33 @@
 									<label for="selectAll"></label>
 								</span>
 							</th>
-							<th>Question_type</th>
+							
 							<th>Question</th>
+							<th>Author</th>
+							<th>Category</th>
+							<th>Time</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php 
 
+
+							$timestamp = time();
+							
+
+
+							
+							$sql = "SELECT * FROM questions LEFT JOIN users ON  questions.user_id=users.user_id";
+						
+ 							$query = mysqli_query($db,$sql);
  
-							$sql = "SELECT * FROM questions order by Question_id ASC"; 
+								
+									
  
-							$query = mysqli_query($db,$sql);
- 
-									if(!$query)
+								while($data = $query->fetch_assoc())
 									{		
-    									echo "Query does not work.".mysqli_error($db);die;
-									}
- 
-								while($data = mysqli_fetch_array($query))
-									{		
+									
 								?>
    
 						<tr>
@@ -61,12 +68,26 @@
 									<label for="checkbox1"></label>
 								</span>
 							</td>
-							
-							<td><?php echo $data['Question_type']."<br>";?></td>
                         
-                            <td><?php echo $data['Question']."<br>";?></td>
+                            <td><?php echo $data['Question'];?></td>
 
-						
+							<td><?php echo $data['username'];?></td>
+
+							<td>
+								
+							<?php
+							$cid=$data['Cat_id'];
+    $catid_sql=mysqli_query($db,"SELECT * FROM `Category` WHERE `cat_id` = $cid ");
+        if($crow=mysqli_fetch_assoc($catid_sql)){
+        ?>
+       <?php echo ucwords($crow['Cat_name']); ?>
+
+        <?php
+    }
+?>
+							</td>
+
+							<td><?php echo (date("F d, Y h:i A", $timestamp));?></td>
 							
 							<td>
                             
@@ -78,6 +99,7 @@
 							</td>
 							<?php							
 								}
+							
 							?>
 						</tr>
 					
