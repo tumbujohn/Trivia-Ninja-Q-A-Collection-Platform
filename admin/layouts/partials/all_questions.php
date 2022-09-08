@@ -1,4 +1,19 @@
+<?php
 
+session_start();
+    if(!ISSET($_SESSION['username'])){
+        header('location:../login.php');
+    }
+    
+// include ("profile.php");    
+
+
+include ("header.php");
+include ("sidenav.php");
+// include ("./partials/panel");
+// include ("./partials/footer");
+
+?>
 
 
 
@@ -17,7 +32,8 @@
 							<h2>Manage <b>Questions</b></h2>
 						</div>
 						<div class="col-xs-6">
-						
+							<a href="#editquestion" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Question</span></a>
+							<a href="#deleteUserModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
 						</div>
 						
 					</div>
@@ -32,33 +48,26 @@
 									<label for="selectAll"></label>
 								</span>
 							</th>
-							
+							<th>Question_type</th>
 							<th>Question</th>
-							<th>Author</th>
-							<th>Category</th>
-							<th>Time</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 					<?php 
 
-
-							$timestamp = time();
-							
-
-
-							
-							$sql = "SELECT * FROM questions LEFT JOIN users ON  questions.user_id=users.user_id";
-						
- 							$query = mysqli_query($db,$sql);
  
-								
-									
+							$sql = "SELECT * FROM questions";
  
-								while($data = $query->fetch_assoc())
+							$query = mysqli_query($db,$sql);
+ 
+									if(!$query)
 									{		
-									
+    									echo "Query does not work.".mysqli_error($db);die;
+									}
+ 
+								while($data = mysqli_fetch_array($query))
+									{		
 								?>
    
 						<tr>
@@ -68,38 +77,24 @@
 									<label for="checkbox1"></label>
 								</span>
 							</td>
+							
+							<td><?php echo $data['Question_type']."<br>";?></td>
                         
-                            <td><?php echo $data['Question'];?></td>
+                            <td><?php echo $data['Question']."<br>";?></td>
 
-							<td><?php echo $data['username'];?></td>
-
-							<td>
-								
-							<?php
-							$cid=$data['Cat_id'];
-    $catid_sql=mysqli_query($db,"SELECT * FROM `Category` WHERE `cat_id` = $cid ");
-        if($crow=mysqli_fetch_assoc($catid_sql)){
-        ?>
-       <?php echo ucwords($crow['Cat_name']); ?>
-
-        <?php
-    }
-?>
-							</td>
-
-							<td><?php echo (date("F d, Y h:i A", $timestamp));?></td>
+						
 							
 							<td>
                             
 							
 								<a href="#editquestion" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								
-								<a href="#More" class="delete" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE15C;</i></a>
-								
+								<a href="#More" class="edit" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE254;</i></a>
+
+								<a href="#deletequestion" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
 							<?php							
 								}
-							
 							?>
 						</tr>
 					
@@ -190,6 +185,8 @@
 			</div>
 		</div>
 	</div>
+
+
 						<tr>
 							<td>
 								<span class="custom-checkbox">
@@ -197,8 +194,6 @@
 									<label for="checkbox1"></label>
 								</span>
 							</td>
-
-						</tr>
 				
 					
 	<!-- Edit Modal HTML -->
@@ -214,7 +209,13 @@
 
 								$query = mysqli_query($db,$sql);
 
-						$getrowassoc= mysqli_fetch_assoc($query)
+								if(!$query)
+								{
+									echo "Query does not work.".mysqli_error($db);die;
+								}
+
+								while($row = mysqli_fetch_array($query))
+								{								
 						?>
 
 					<div class="modal-header">						
@@ -224,35 +225,35 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Question_type</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Question_type']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Question_type']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Question</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Question']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Question']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Option_1</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_1']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_1']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Option_2</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_2']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_2']; ?>" required>
 						</div>	
 						<div class="form-group">
 							<label>Option_3</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_3']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_3']; ?>" required>
 						</div>	
 						<div class="form-group">
 							<label>Option_4</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_4']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_4']; ?>" required>
 						</div>	
 						<div class="form-group">
 							<label>Answer</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Answer']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Answer']; ?>" required>
 						</div>		
 						
 						<?php
-					
+						}
 						?>
 					</div>
 					<div class="modal-footer">
@@ -261,7 +262,6 @@
 
 					</div>
 					
-					
 				</form>
 			</div>
 		</div>
@@ -269,35 +269,25 @@
 
 	<!-- Delete Modal HTML -->
 
-	<div id="deletequestion" class="modal fade">
-
+	<div id="deleteUserModal" class="modal fade">
 		<div class="modal-dialog">
-
 			<div class="modal-content">
-
 				<form>
-
 					<div class="modal-header">						
 						<h4 class="modal-title">Delete Question</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
-
 					<div class="modal-body">					
 						<p>Are you sure you want to delete these Question?</p>
 						<p class="text-warning"><small>This action cannot be undone.</small></p>
 					</div>
-
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
 						<input type="submit" class="btn btn-danger" value="Delete">
 					</div>
-
 				</form>
-
 			</div>
-
 		</div>
-
 	</div>
 
 
@@ -306,3 +296,4 @@
 
 
 
+<?php include ("footer.php"); ?>

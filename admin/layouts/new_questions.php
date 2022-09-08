@@ -54,7 +54,7 @@ include ("partials/sidenav.php");
                     <?php 
 
  
-                        $sql = "SELECT * FROM questions WHERE Status='1'"; 
+                        $sql = "SELECT * FROM questions WHERE Status='0'"; 
 
                         $query = mysqli_query($db,$sql);
 
