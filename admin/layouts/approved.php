@@ -36,10 +36,8 @@ include ("partials/sidenav.php");
 									<label for="selectAll"></label>
 								</span>
 							</th>
-							<th>Question_id</th>
-							<th>Cat_id</th>
-							<th>user_id</th>
-							<th>Question_type</th>
+							<th>Username</th>
+							<th>Category_Name</th>
 							<th>Question</th>
                             <th>Option_1</th>
                             <th>Option_2</th>
@@ -74,10 +72,33 @@ include ("partials/sidenav.php");
 									<label for="checkbox1"></label>
 								</span>
 							</td>
-							<td><?php echo $data['Question_id'];?></td>
-							<td><?php echo $data['Cat_id'];?></td>
-							<td><?php echo $data['user_id'];?></td>
-							<td><?php echo $data['Question_type'];?></td>
+							
+							<td>
+								<?php
+								$uid=$data['user_id'];
+								$userid_sql=mysqli_query($db,"SELECT * FROM `users` WHERE `user_id` = $uid ");
+								if($crow=mysqli_fetch_assoc($userid_sql)){
+								?>
+								   <?php echo ucwords($crow['username']); ?>
+	
+									<?php
+										}
+								?>
+							</td>
+
+						<td>
+								<?php 
+							$cid=$data['Cat_id'];
+    						$catid_sql=mysqli_query($db,"SELECT * FROM `Category` WHERE `cat_id` = $cid ");
+        					if($crow=mysqli_fetch_assoc($catid_sql)){
+        					?>
+       						<?php echo ucwords($crow['Cat_name']); ?>
+
+       						 <?php
+   								 }
+							?>
+							</td>
+						
                             <td><?php echo $data['Question'];?></td>
 							<td><?php echo $data['Option_1'];?></td>
 							<td><?php echo $data['Option_2'];?></td>

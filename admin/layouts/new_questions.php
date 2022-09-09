@@ -16,17 +16,23 @@ include ("partials/sidenav.php");
 ?>
 <div class="all__users" >
 
-    <div class="container">
+   
+
+	<div class="container">
 		<div class="table-responsive">
 			<div class="table-wrapper">
 				<div class="table-title">
 					<div class="row">
 						<div class="col-xs-6">
-							<h2> New <b> Questions </b></h2>
+							<h2>Manage <b>New Questions</b></h2>
 						</div>
-					
+						<div class="col-xs-6">
+						
+						</div>
+						
 					</div>
 				</div>
+
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
@@ -36,17 +42,12 @@ include ("partials/sidenav.php");
 									<label for="selectAll"></label>
 								</span>
 							</th>
-							<th>Question_id</th>
-							<th>Cat_id</th>
-							<th>user_id</th>
-							<th>Question_type</th>
+							
 							<th>Question</th>
-                            <th>Option_1</th>
-                            <th>Option_2</th>
-                            <th>Option_3</th>
-                            <th>Option_4</th>
-                            <th>Answer</th>
-                            <th>Status</th>
+							<th>Author</th>
+							<th>Category</th>
+							<th>Time</th>
+							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -54,7 +55,7 @@ include ("partials/sidenav.php");
                     <?php 
 
  
-                        $sql = "SELECT * FROM questions WHERE Status='0'"; 
+$sql = "SELECT * FROM questions LEFT JOIN users ON  questions.user_id=users.user_id WHERE Status='0'"; 
 
                         $query = mysqli_query($db,$sql);
 
@@ -65,29 +66,48 @@ include ("partials/sidenav.php");
 
                              while($data = mysqli_fetch_array($query))
                              {		
+								$timestamp = strtotime($data['datetime']);
                             ?>                      
 						
-                    <tr>
+                   
+						<tr>
 							<td>
 								<span class="custom-checkbox">
 									<input type="checkbox" id="checkbox1" name="options[]" value="1">
 									<label for="checkbox1"></label>
 								</span>
 							</td>
-							<td><?php echo $data['Question_id'];?></td>
-							<td><?php echo $data['Cat_id'];?></td>
-							<td><?php echo $data['user_id'];?></td>
-							<td><?php echo $data['Question_type'];?></td>
+                        
                             <td><?php echo $data['Question'];?></td>
-							<td><?php echo $data['Option_1'];?></td>
-							<td><?php echo $data['Option_2'];?></td>
-							<td><?php echo $data['Option_3'];?></td>
-                            <td><?php echo $data['Option_4'];?></td>
-							<td><?php echo $data['Answer'];?></td>
-							<td><?php echo $data['Status'];?></td>
+
+							<td><?php echo $data['username'];?></td>
+
+							<td>
+								
+							<?php
+							$cid=$data['Cat_id'];
+    						$catid_sql=mysqli_query($db,"SELECT * FROM `Category` WHERE `cat_id` = $cid ");
+        					if($crow=mysqli_fetch_assoc($catid_sql)){
+        					?>
+       						<?php echo ucwords($crow['Cat_name']); ?>
+
+       						 <?php
+   								 }
+							?>
+							</td>
+
+							<td><?php echo (date("F d, Y h:i A", $timestamp));?></td>
 							
-							
+							<td>
+                            
 						
+
+								<a href="../layouts/edit_question.php" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+								
+								<a href="../layouts/more.php?qid=<?php echo $data['Question_id'] ?>" class="delete" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE15C;</i></a>
+								
+							</td>
+				
 						</tr>
                         <?php							
 								}

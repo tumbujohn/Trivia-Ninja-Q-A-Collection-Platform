@@ -14,7 +14,7 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-xs-6">
-							<h2>Manage <b>Questions</b></h2>
+							<h2>Manage <b>All Questions</b></h2>
 						</div>
 						<div class="col-xs-6">
 						
@@ -43,22 +43,15 @@
 					<tbody>
 					<?php 
 
-
-							$timestamp = time();
-							
-
-
+						
 							
 							$sql = "SELECT * FROM questions LEFT JOIN users ON  questions.user_id=users.user_id";
 						
  							$query = mysqli_query($db,$sql);
  
-								
-									
- 
 								while($data = $query->fetch_assoc())
 									{		
-									
+										$timestamp = $data['datetime'];  
 								?>
    
 						<tr>
@@ -77,24 +70,25 @@
 								
 							<?php
 							$cid=$data['Cat_id'];
-    $catid_sql=mysqli_query($db,"SELECT * FROM `Category` WHERE `cat_id` = $cid ");
-        if($crow=mysqli_fetch_assoc($catid_sql)){
-        ?>
-       <?php echo ucwords($crow['Cat_name']); ?>
+    						$catid_sql=mysqli_query($db,"SELECT * FROM `Category` WHERE `cat_id` = $cid ");
+        					if($crow=mysqli_fetch_assoc($catid_sql)){
+        					?>
+       						<?php echo ucwords($crow['Cat_name']); ?>
 
-        <?php
-    }
-?>
+       						 <?php
+   								 }
+							?>
 							</td>
 
 							<td><?php echo (date("F d, Y h:i A", $timestamp));?></td>
 							
 							<td>
                             
-							
-								<a href="#editquestion" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+						
+
+								<a href="../layouts/edit_question.php" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								
-								<a href="#More" class="delete" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE15C;</i></a>
+								<a href="../layouts/more.php?qid=<?php echo $data['Question_id'] ?>" class="delete" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE15C;</i></a>
 								
 							</td>
 							<?php							
@@ -208,14 +202,15 @@
 			<div class="modal-content">
 				<form>
 						<?php 
+							
 
- 
-								$sql = "SELECT * FROM questions";
+		
 
-								$query = mysqli_query($db,$sql);
+						// $Question_id= ['Question'];
+						// $sql=mysqli_query($db,"SELECT * FROM `questions`  WHERE Question_id='$Question_id'");
 
-						$getrowassoc= mysqli_fetch_assoc($query)
-						?>
+						// $row= mysqli_fetch_assoc($query)
+						// ?>
 
 					<div class="modal-header">						
 						<h4 class="modal-title">Edit Question</h4>
@@ -224,34 +219,37 @@
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Question_type</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Question_type']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Question_type']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Question</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Question']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Question']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Option_1</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_1']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_1']; ?>" required>
 						</div>
 						<div class="form-group">
 							<label>Option_2</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_2']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_2']; ?>" required>
 						</div>	
 						<div class="form-group">
 							<label>Option_3</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_3']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_3']; ?>" required>
 						</div>	
 						<div class="form-group">
 							<label>Option_4</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Option_4']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Option_4']; ?>" required>
 						</div>	
 						<div class="form-group">
 							<label>Answer</label>
-							<input type="text" class="form-control" value="<?php echo $getrowassoc['Answer']; ?>" required>
+							<input type="text" class="form-control" value="<?php echo $row['Answer']; ?>" required>
 						</div>		
 						
 						<?php
+						// 	}
+								
+						// }
 					
 						?>
 					</div>

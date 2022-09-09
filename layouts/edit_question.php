@@ -1,11 +1,7 @@
 
 <?php
 
-session_start();
-    if(!ISSET($_SESSION['username'])){
-        header('location:../login.php');
-    }
-    
+
 // include ("profile.php");    
 
 
@@ -14,184 +10,80 @@ include ("partials/sidenav.php");
 // include ("./partials/panel");
 // include ("./partials/footer");
 
-	$Question_id= $_GET['qid'];
+	$Question_id= $_POST['qid'];
+    $Question_id=$_POST('qid');
 	$sql=mysqli_query($db,"SELECT * FROM `questions`  WHERE Question_id='$Question_id'");
 	$row=mysqli_fetch_assoc($sql);
 ?>
 
-   <div class = 'edit-wrapper'>
-	<form method="POST" action="update_question.php?id=<?php echo $Question_id; ?>">
+<div id="editquestion" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+						<?php 
 
-    <div class="edit-grp">
-    <label>Language</label>
-    <select name="Language_id" id="">
 
-    <?php 
-    if($row['Language_id'] == 1){
-        echo '
-        <option value="1" selected>English</option>
-        <option value="2">French</option>
-        ';
-    } else{
-        echo '
-        <option value="1" >English</option>
-        <option value="2" selected>French</option>
-        ';
-    }
-       ?>
-       
 
-    </select>
-    </div>
+								$sql = "SELECT * FROM questions";
 
-    
-    <div class="edit-grp selects">
-    <label>Subject</label>
-    <select name="Cat_id" >
-<?php
-    $catid_sql=mysqli_query($db,"SELECT * FROM `Category`");
-    while( $crow=mysqli_fetch_assoc($catid_sql)){
-        if($crow['cat_id'] == $row['Cat_id']){
-        ?>
-        <option value="<?php echo $crow['cat_id'] ?>" selected><?php echo $crow['Cat_name'] ?></option>
+								$query = mysqli_query($db,$sql);
 
-        <?php
-    }else{
-?>
- <option value="<?php echo $crow['cat_id'] ?>"><?php echo $crow['Cat_name'] ?></option>
-<?php
-    }
-}
-?>
+								if(!$query)
+								{
+									echo "Query does not work.".mysqli_error($db);die;
+								}
 
-    </select>
-    </div>
+								while($row = mysqli_fetch_array($query))
+								{								
+						?>
 
-    
-    <div class="edit-grp selects">
-    <label>Difficulty</label>
-    <select name="Sub_cat_id" id="">
-    <?php
-    $catid_sql=mysqli_query($db,"SELECT * FROM `sub_category`");
-    while( $crow=mysqli_fetch_assoc($catid_sql)){
-        if($crow['Sub_cat_id'] == $row['Sub_cat_id']){
-        ?>
-        <option value="<?php echo $crow['Sub_cat_id'] ?>" selected><?php echo $crow['Sub_cat_name'] ?></option>
+					<div class="modal-header">						
+						<h4 class="modal-title">Edit Question</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label>Question_type</label>
+							<input type="text" class="form-control" value="<?php echo $row['Question_type']; ?>" required>
+						</div>
+						<div class="form-group">
+							<label>Question</label>
+							<input type="text" class="form-control" value="<?php echo $row['Question']; ?>" required>
+						</div>
+						<div class="form-group">
+							<label>Option_1</label>
+							<input type="text" class="form-control" value="<?php echo $row['Option_1']; ?>" required>
+						</div>
+						<div class="form-group">
+							<label>Option_2</label>
+							<input type="text" class="form-control" value="<?php echo $row['Option_2']; ?>" required>
+						</div>	
+						<div class="form-group">
+							<label>Option_3</label>
+							<input type="text" class="form-control" value="<?php echo $row['Option_3']; ?>" required>
+						</div>	
+						<div class="form-group">
+							<label>Option_4</label>
+							<input type="text" class="form-control" value="<?php echo $row['Option_4']; ?>" required>
+						</div>	
+						<div class="form-group">
+							<label>Answer</label>
+							<input type="text" class="form-control" value="<?php echo $row['Answer']; ?>" required>
+						</div>		
+						
+						<?php
+								}
+						?>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-info" value="Save">
 
-        <?php
-    }else{
-?>
- <option value="<?php echo $crow['Sub_cat_id'] ?>"><?php echo $crow['Sub_cat_name'] ?></option>
-<?php
-    }
-}
-?>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
 
-    </select>
-    </div>
-
-    
-    <div class="edit-grp selects">
-    <label>Question Type</label>
-    <select name="Question_type" id="">
-        
-    <?php 
-    if($row['Question_type'] == 1){
-        echo '
-        <option value="1" selected>MCQ</option>
-        <option value="2">True/False</option>
-        ';
-    } else{
-        echo '
-        <option value="1" >MCQ</option>
-        <option value="2" selected>True/False</option>
-        ';
-    }
-       ?>
-       
-    </select>
-    </div>
-
-    
-    <div class="edit-grp">
-    <label class ='op'>Question </label>
-    <input type="text" name="Question" value="<?php echo $row['Question']; ?>">
-    </div>
-
-    
-    
-    <div class="edit-grp">
-    <label class ='op'>Option 1</label>
-    <input type="text" name="Option_1" value="<?php echo $row['Option_1']; ?>">
-    </div>
-
-    
-    <div class="edit-grp">
-    <label class ='op'>Option 2</label>
-    <input type="text" name="Option_2" value="<?php echo $row['Option_2']; ?>">
-    </div>
-
-    
-    <div class="edit-grp">
-    <label class ='op'>Option 3</label>
-    <input type="text" name="Option_3" value="<?php echo $row['Option_3']; ?>">
-    </div>
-    
-    <div class="edit-grp">
-    <label class ='op'>Option 4</label>
-    <input type="text" name="Option_4" value="<?php echo $row['Option_4']; ?>">
-    </div>
-    
-    
-    <div class="edit-grp">
-    <label>Answer</label>
-    <select name="Answer" id="">
-    <?php
-                $Ans = $row['Answer'];
-            
-                if($Ans == 'a'){
-                    echo '
-                    <option value="a" selected>Option 1</option>
-                    <option value="b">Option 2</option>
-                    <option value="c">Option 3</option>
-                    <option value="d">Option 4</option>
-                    ';
-                }elseif($Ans == 'b'){
-                    echo '
-                    <option value="a">Option 1</option>
-                    <option value="b" selected>Option 2</option>
-                    <option value="c">Option 3</option>
-                    <option value="d">Option 4</option>
-                    ';
-                }elseif($Ans == 'c'){
-                    echo '
-                    <option value="a">Option 1</option>
-                    <option value="b">Option 2</option>
-                    <option value="c"selected>Option 3</option>
-                    <option value="d">Option 4</option>
-                    ';
-                }else{
-                    echo '
-                    <option value="a">Option 1</option>
-                    <option value="b">Option 2</option>
-                    <option value="c">Option 3</option>
-                    <option value="d" selected>Option 4</option>
-                    ';
-                }
-        ?>
-    </select>
-    </div>
-
-    
-    <div class="edit-grp">
-    <label>Note</label>
-    <textarea name="Note" id="" cols="10" rows="3"><?php echo $row['Note']; ?></textarea>
-    </div>
-    <div class="edit-grp sub">
-        <input type="hidden" name="user_id" value = "<?php echo $_SESSION['user_id'];?>">
-		<input type="submit" name="update" value="update">
-    </div>
-
-	</form>
-  </div>
     <?php include ("./partials/footer.php"); ?>

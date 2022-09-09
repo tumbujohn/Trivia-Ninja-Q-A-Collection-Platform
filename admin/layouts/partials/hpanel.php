@@ -30,7 +30,7 @@
 									<label for="selectAll"></label>
 								</span>
 							</th>
-							<th>user_id</th>
+							
 							<th>username</th>
 							<th>email</th>
 							<th>Phone</th>
@@ -63,7 +63,7 @@
 								</span>
 							</td>
 							
-							<td><?php echo $data['user_id']."<br>";?></td>
+							
                         
                             <td><?php echo $data['username']."<br>";?></td>
 
@@ -75,7 +75,7 @@
                             
 							
 								<a href="#editUserModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-								<a href="#deleteUserModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+								<a href="#deleteUserModal" type="button" class="btn btn-danger btn-sm delete-button" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
 <?php							
 }
@@ -194,7 +194,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-danger" value="Delete">
+						<input type="submit" class="btn btn-danger" value="Delete" id="delete">
 					</div>
 				</form>
 			</div>

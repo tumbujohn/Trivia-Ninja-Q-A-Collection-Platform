@@ -87,9 +87,9 @@ include ("sidenav.php");
 							<td>
                             
 							
-								<a href="#editquestion" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+								<a href="../" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								
-								<a href="#More" class="edit" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE254;</i></a>
+								<a href="../more.php" class="edit" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE254;</i></a>
 
 								<a href="#deletequestion" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
@@ -204,7 +204,8 @@ include ("sidenav.php");
 				<form>
 						<?php 
 
- 
+
+
 								$sql = "SELECT * FROM questions";
 
 								$query = mysqli_query($db,$sql);
@@ -253,7 +254,7 @@ include ("sidenav.php");
 						</div>		
 						
 						<?php
-						}
+								}
 						?>
 					</div>
 					<div class="modal-footer">
@@ -269,27 +270,29 @@ include ("sidenav.php");
 
 	<!-- Delete Modal HTML -->
 
-	<div id="deleteUserModal" class="modal fade">
+	<div id="deletequestion" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form>
+					<?php
+						  mysqli_query($conn, "DELETE FROM `member` WHERE `mem_id`='$_REQUEST[id]'") or die(mysqli_error());
+					?>
 					<div class="modal-header">						
-						<h4 class="modal-title">Delete Question</h4>
+						<h4 class="modal-title">Delete User</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
-						<p>Are you sure you want to delete these Question?</p>
+						<p>Are you sure you want to delete these Records?</p>
 						<p class="text-warning"><small>This action cannot be undone.</small></p>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-danger" value="Delete">
+						<input type="submit" class="btn btn-danger" value="Delete" id="delete" onclick="deleteRow()">
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-
 
 </div>
 
