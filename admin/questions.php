@@ -51,7 +51,7 @@
  
 								while($data = $query->fetch_assoc())
 									{		
-										$timestamp = $data['datetime'];  
+										$timestamp = strtotime($data['datetime']);  
 								?>
    
 						<tr>
