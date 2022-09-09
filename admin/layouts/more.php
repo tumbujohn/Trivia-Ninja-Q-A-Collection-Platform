@@ -5,18 +5,30 @@ session_start();
     if(!ISSET($_SESSION['username'])){
         header('location:../login.php');
     }
-    
-    if(isset($_GET['vqid'])){
-    $vqid= $_GET['vqid'];
 
-
-    }
 
 include ("partials/header.php");
 include ("partials/sidenav.php");
+
+if(isset($_GET['vqid'])){
+    $vqid= $_GET['vqid'];
+
+    $sqls = "UPDATE questions SET Status= 1 WHERE question_id=$vqid ";
+  
+    $sends=mysqli_query($db, $sqls);
+
+if(!$sends)
+    {
+        echo "Query does not work.";
+    }else{
+        echo "<script>alert('Updated Successfully');</script>";
+    }
+}
+
+
+
+
 ?>
-
-
 
 
 
@@ -90,7 +102,7 @@ while($row = mysqli_fetch_array($query))
                             <td><?php echo $row['Option_3'];?></td>
                             <td><?php echo $row['Option_4'];?></td>
                             <td><?php echo $row['Answer'];?></td>
-							<td><a style="background:green;color:white;padding:5px 10px;" href="#?vqid=<?php  echo $qid ;?>">Accept</a></td>
+							<td><a style="background:green;color:white;padding:5px 10px;" href="more.php?vqid=<?php echo $qid ;?>">Accept</a></td>
 						</tr>
 									
 
