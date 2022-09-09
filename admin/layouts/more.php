@@ -9,6 +9,9 @@ session_start();
     if(isset($_GET['vqid'])){
     $vqid= $_GET['vqid'];
 
+
+    }
+
 include ("partials/header.php");
 include ("partials/sidenav.php");
 ?>
@@ -94,7 +97,7 @@ while($row = mysqli_fetch_array($query))
 						<?php
 						}
                     }
-                    }
+                    
 						?>			
 				
 					</tbody>
