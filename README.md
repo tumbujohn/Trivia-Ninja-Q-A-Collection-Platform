@@ -9,7 +9,7 @@ The TNQACP let's content creators set questions for **Trivia Ninja**
 
 > ### Project Coordinators:
 > Mr Tumbu John (superior)  
-> Mr Akale Godlove  
+> Mr Akale Godlove. 
 >
 > ### Front-End Developers:
 > Miss Obasiarray Array-Njok  
