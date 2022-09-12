@@ -19,7 +19,7 @@
 					</div>
 				</div>
 
-
+<!-- Users table  -->
 
 				<table class="table table-striped table-hover">
 					<thead>
@@ -41,7 +41,7 @@
 					<tbody>
 					<?php 
 
- 
+                // Collect all users from database 
 					$sql = "SELECT * FROM users order by user_id desc";
  
 					$query = mysqli_query($db,$sql);

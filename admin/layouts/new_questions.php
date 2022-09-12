@@ -83,7 +83,7 @@ $sql = "SELECT * FROM questions LEFT JOIN users ON  questions.user_id=users.user
 							<td><?php echo $data['username'];?></td>
 
 							<td>
-								
+								<!-- Get Category name by Id -->
 							<?php
 							$cid=$data['Cat_id'];
     						$catid_sql=mysqli_query($db,"SELECT * FROM `Category` WHERE `cat_id` = $cid ");

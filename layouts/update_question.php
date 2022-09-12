@@ -22,7 +22,7 @@ if(isset($_GET['id']) && isset($_POST['update'])){
    $Option_4 = $_POST['Option_4'];
    $Answer = $_POST['Answer'];
    $Note = $_POST['Note'];
-   
+  //  Updating Questions in the database
 
   $sql = "UPDATE questions SET Language_id='$Language_id', Cat_id='$Cat_id', Sub_cat_id='$Sub_cat_id', user_id='$user_id', Question_type= '$Question_type', Question='$Question', Option_1='$Option_1', Option_2= '$Option_2', Option_3='$Option_3', Option_4='$Option_4', Answer='$Answer', Note='$Note'
   

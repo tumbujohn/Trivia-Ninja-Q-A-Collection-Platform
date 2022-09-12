@@ -18,12 +18,12 @@ if(isset($_POST['signup'])){
   $password = $_POST['password'];
    $cpassword = $_POST['cpassword'];
 
-  
+  // Password Comfirmation
   if ($password !== $cpassword){
     echo "Password do not match";
   }
   else{
-   
+  //  Password hashing
     $pass=md5($password);
 
   $sql = "INSERT INTO users (fname, lname, username, email,tel, password) VALUES ('$fname', '$lname','$username','$email','$tel','$pass')";

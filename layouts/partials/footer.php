@@ -2,7 +2,7 @@
     
 </div>
 <!-- end of dasboard container -->
- 
+ <!-- Footer elements  -->
     <footer>
         <div class="row">
             <div class="col logo">

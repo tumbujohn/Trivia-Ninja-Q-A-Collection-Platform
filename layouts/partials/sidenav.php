@@ -1,4 +1,5 @@
 
+<!-- Side Navigation contents  -->
 <div class="na" id="sidenav">
         <div id="nav-bar">
      <i class="fa fa-home" ><a href="dashboard.php">Home</a></i>

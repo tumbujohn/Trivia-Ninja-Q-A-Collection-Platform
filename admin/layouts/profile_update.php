@@ -1,5 +1,5 @@
 <?php
- 
+//  initialize session 
  session_start();
  require_once '../lib/helpers/connection.db.php';
     

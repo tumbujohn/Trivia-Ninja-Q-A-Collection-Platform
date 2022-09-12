@@ -1,4 +1,4 @@
-
+<!-- Notifications panel  -->
     <div class="notification">
       <div class="noti_icon"> <span><b>Notifications </b></span><i class="fa-regular fa-bell"></i></div>
  

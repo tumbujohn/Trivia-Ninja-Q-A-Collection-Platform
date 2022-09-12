@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="asset/css/signup.css">
     </head> 
     <body>
+        <!--  Sign up Form Starts here--->
+        
         <form action="register.php" method="post" class="signup-form">
             <div id="signup">
                 <div class="logo">

@@ -1,6 +1,7 @@
 <?php
  
  session_start();
+//  include connection 
  require_once '../lib/helpers/connection.db.php';
     
  if(isset($_POST['update']))

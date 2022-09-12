@@ -6,7 +6,7 @@
 
 <div class="all__users" >
       
-
+<!-- Admin Question Management form  -->
 
 	<div class="container">
 		<div class="table-responsive">
@@ -86,7 +86,7 @@
                             
 						
 
-								<a href="../layouts/edit_question.php" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+								<a href="../layouts/edit_question.php?qid=<?php echo $data['Question_id'] ?>" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 								
 								<a href="../layouts/more.php?qid=<?php echo $data['Question_id'] ?>" class="delete" data-toggle="modal"><i class="fa-sharp fa-solid fa-file-plus-minus" data-toggle="tooltip" title="More">&#xE15C;</i></a>
 								

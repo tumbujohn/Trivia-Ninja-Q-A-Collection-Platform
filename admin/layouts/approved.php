@@ -22,7 +22,7 @@ include ("partials/sidenav.php");
 				<div class="table-title">
 					<div class="row">
 						<div class="col-xs-6">
-							<h2> Approved <b> Questions </b></h2>
+							<h2> Vetted <b> Questions </b></h2>
 						</div>
 					
 					</div>

@@ -1,5 +1,5 @@
 <?php
-
+// initialize session when logged In 
 session_start();
     if(!ISSET($_SESSION['username'])){
         header('location:login.php');

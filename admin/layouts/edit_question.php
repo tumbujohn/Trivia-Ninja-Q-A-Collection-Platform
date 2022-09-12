@@ -14,6 +14,11 @@ include ("partials/sidenav.php");
 // include ("./partials/panel");
 // include ("./partials/footer");
 
+if(isset($_GET['qid'])){
+    $qid= $_GET['qid'];
+}else{
+    header('location: admin/layouts/all_questions.php ');
+}
 	$Question_id= $_GET['qid'];
 	$sql=mysqli_query($db,"SELECT * FROM `questions`  WHERE Question_id='$Question_id'");
 	$row=mysqli_fetch_assoc($sql);

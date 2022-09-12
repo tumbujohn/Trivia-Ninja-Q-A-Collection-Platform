@@ -10,6 +10,7 @@ session_start();
 include ("partials/header.php");
 include ("partials/sidenav.php");
 
+// verted question id, vqid; it is the verted questions; 
 if(isset($_GET['vqid'])){
     $vqid= $_GET['vqid'];
 

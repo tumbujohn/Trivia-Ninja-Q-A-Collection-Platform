@@ -1,5 +1,5 @@
 <?php
-
+// Admin Dashboard
 session_start();
     if(!ISSET($_SESSION['username'])){
         header('location:../login.php');

@@ -1,7 +1,7 @@
 <?php
 #include connection
-require "../lib/helpers/connection.db.php";
-
+require '../../lib/helpers/connection.db.php';
+//require()
 
 # Define variables and initialize with empty values
 
@@ -25,7 +25,6 @@ if(isset($_GET['id']) && isset($_POST['update'])){
    
 
   $sql = "UPDATE questions SET Language_id='$Language_id', Cat_id='$Cat_id', Sub_cat_id='$Sub_cat_id', user_id='$user_id', Question_type= '$Question_type', Question='$Question', Option_1='$Option_1', Option_2= '$Option_2', Option_3='$Option_3', Option_4='$Option_4', Answer='$Answer', Note='$Note'
-  
   WHERE Question_id=$id
 
   ";
@@ -33,8 +32,8 @@ if(isset($_GET['id']) && isset($_POST['update'])){
   $send=mysqli_query($db, $sql);
   
   if($send){
-    echo '<script>alert("Qusetion successfully Updated");</script>';
-    echo "<script>" . "window.location.href='dashboard.php';" . "</script>";
+    echo '<script>alert("Question successfully Updated");</script>';
+    echo "<script>" . "header.location.href='dashboard.php';" . "</script>";
     // header("location:../dashboard.php");
     // exit();
   }

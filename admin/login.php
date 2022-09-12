@@ -18,6 +18,7 @@ include 'val_Login.php';
             <section id="sect">
                 <div id="signin">
                     <h1 id="log">LOGIN</h1>
+                    <!-- Admin Login Form  -->
                     <form  method="post">
                         <div>
                             <label for="username">username</label>

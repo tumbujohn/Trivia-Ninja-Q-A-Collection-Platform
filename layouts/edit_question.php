@@ -20,6 +20,7 @@ include ("partials/sidenav.php");
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form>
+					<!-- Fetch table attributes and content from database and display -->
 						<?php 
 
 
